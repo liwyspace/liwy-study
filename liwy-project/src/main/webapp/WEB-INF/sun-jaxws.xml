@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">  
+    <!-- 服务路径http://网站路径/services/hello -->
+    <endpoint name="Hello" implementation="com.liwy.project.ws.jws.FirstService" url-pattern="/service/firstService" />
+</endpoints>

@@ -1,0 +1,20 @@
+{
+  "name": "gulptest",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "liwy <liwenyao_java@126.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^7.0.0"
+  }
+}

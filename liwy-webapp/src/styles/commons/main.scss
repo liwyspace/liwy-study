@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+//变量
+$width: 12em;
+//变量默认值
+$content: "Second content" !default;
+//debug调试指令
+@debug 10em + 12em;
+//嵌套
+body {
+	a {
+		//全局变量
+		$height: 22em !global;
+		color:#FF9900;
+		//父选择器
+		&.hover {
+			color: red;
+		}
+	}
+
+	//属性嵌套
+	font: {
+		family: fantasy;
+		size: 20px;
+		weight: bold;
+	}
+	div {
+		//使用变量
+		width: $width+20em;
+		height: $height
+	}
+
+	//at-root指令
+	@at-root .char {
+		font-size: 20px;
+	}
+}
+
+//import指令
+@import "sub.scss";
+@include firefox-message(".header");
+
+/* list */
+$list: 1px 2px 3px;
+@each $v in $list {
+	.list--#{$v} {
+		width: $v;
+	}
+}
+
+/* 遍历map */
+$map: (
+  key1: value1,
+  key2: value2,
+  key3: value3
+);
+@each $key, $value in $map {
+  .element--#{$key} {
+    background: $value;
+  }
+}
+
+/* media指令 */
+.sidebar {
+  width: 300px;
+  @media screen and (orientation: landscape) {
+    width: 500px;
+  }
+}
+
+/* extend指令 */
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+.seriousError {
+  @extend .error;
+  border-width: 3px;
+}
+//%占位符
+#context a%extreme {
+  color: blue;
+  font-weight: bold;
+  font-size: 2em;
+}
+.notice {
+  @extend %extreme;
+}
+
+
+//混合
+@mixin adjust-location($x, $y) {
+  @if unitless($x) {
+  	//warn警告指令
+    @warn "Assuming #{$x} to be in pixels";
+    $x: 1px * $x;
+  }
+  @if unitless($y) {
+  	//error错误指令
+    @error "$y may not be unitless, was #{$y}.";
+  }
+  position: relative; 
+  left: $x; 
+  top: $y;
+}
+div{
+	//引入混合
+	@include adjust-location(10px,20em);
+}
+
+/* if */
+$type: monster;
+p {
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+/* for */
+@for $i from 1 through 3 {
+  .item-#{$i} { width: 2em * $i; }
+}
+
+/* while */
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
+}
+
+/* 可变参数 */
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+/* 向混合中导入样式 */
+@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+/* 函数 */
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar { width: grid-width(5); }
+
+
+.flex {display:flex}

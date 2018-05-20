@@ -1,0 +1,8 @@
+@charset "utf-8";
+//混合
+@mixin firefox-message($selector) {
+	//使用无引号变量
+  body.firefox #{$selector}:before {
+    content: "Hi, Firefox users!";
+  }
+}

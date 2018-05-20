@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!--配置自动扫描的包 -->
+	<context:component-scan base-package="com.liwy.project.controller"
+		use-default-filters="false">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+
+	<!--定义视图解析器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!--<mvc:annotation-driven /> 会自动注册 -->
+	<!--RequestMappingHandlerMapping -->
+	<!--RequestMappingHandlerAdapter -->
+	<!--ExceptionHandlerExceptionResolver -->
+	<!--三个bean。 -->
+
+	<!--还将提供以下支持： -->
+	<!--支持使用 ConversionService 实例对表单参数进行类型转换 -->
+	<!--支持使用 @NumberFormat annotation、@DateTimeFormat 注解完成数据类型的格式化 -->
+	<!--支持使用 @Valid 注解对 JavaBean 实例进行 JSR 303 验证 -->
+	<!--支持使用 @RequestBody 和 @ResponseBody 注解 -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+
+</beans>

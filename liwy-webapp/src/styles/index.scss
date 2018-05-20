@@ -1,0 +1,20 @@
+@charset "utf-8";
+body {
+	background-image: url('../images/image.jpg');
+}
+#article p {
+	font-size: 22px;
+}
+.blue {
+	color:blue;
+}
+
+$width: 100px;
+
+.liwy {
+	width: $width;
+	height: $width+20px;
+}
+.flex {
+	display:flex
+}
