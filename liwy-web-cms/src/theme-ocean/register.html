@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>开源小屋-免费提供程序员学习教程，及生活技能。</title>
+		<meta name="keywords" content="开源小屋,Java教程,php教程,网页设计教程,iOS教程,C++教程,C语言教程,游戏开发教程" />
+		<meta name="description" content="开源小屋-提供Java、PHP、网页设计、平面设计、IOS、C++、游戏开发免费视频教程，教程覆盖范围广，包含真实的实战项目。" />
+		<link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico" />
+		<link type="text/css" rel="stylesheet" href="styles/global.css" />
+		<link type="text/css" rel="stylesheet" href="styles/style.css" />
+	</head>
+	<body>
+		<div class="layout_top" style="background-color: #2E3340;">
+			<div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+				<!-- @导航栏模块-start -->
+				<div class="header">
+					<div class="head_l">
+						<h1><a href="index.html"><img src="upload/logoko.png" alt="开源小屋" /></a></h1>
+						<ul class="nav">
+							<li><a href="index.html" class="afont current ">首页</a></li>
+							<li><a href="course.html" class="afont ">学习</a></li>
+							<li><a href="works.html" class="afont ">作品</a></li>
+							<li><a href="life.html" class="afont ">杂谈</a></li>
+							<li><a href="collection.html" class="afont ">收藏</a></li>
+							<li><a href="about.html" class="afont ">关于我们</a></li>
+						</ul>
+					</div>
+					<div class="head_r">
+						<div class="search">
+							<form action="http://dvd.boxuegu.com/search" method="get">
+								<input type="text" class="search_l" name="keys" autocomplete="off" placeholder="请输入搜索内容" />
+								<input type="submit" class="search_r" />
+							</form>	
+						</div>
+						<div class="quik" id="loginq">
+							<a href="javascript:void(0);" class="afont js_login" >登录</a>
+							<a href="register.html" class="afont">注册</a> 
+						</div>
+						<div class="userhd" id="loginh">
+							<img src="upload/40.jpg" />
+							<a href="member/basic.html" class="afont agd auser" id="myname">个人中心</a>
+							<a>|</a>
+							<a href="http://dvd.boxuegu.com/login/out.html" class="ahelp afont">退出</a>
+						</div>
+					</div>
+				</div>
+				<!-- @导航栏模块-end -->
+			</div>
+		</div>
+		<div class="layout_main" style="margin: 40px 0;">
+			<div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px; background-color: #FFFFFF;">
+				<!-- @注册模块-start -->
+				<div class="zzbd"></div>
+				<div class="register">
+					<div class="hd">
+						<h2>欢迎注册开源小屋学习分享平台--在这您将明确学习路线</h2>
+						<p></p>
+					</div>
+					<div class="formcon" >
+						<form id="registerform" action="http://dvd.boxuegu.com/Register?" method="post">
+							<div class="line">
+								<strong class="line_l">用户名</strong>
+								<input type="text" placeholder="请输入您的用户名" name="uname" id="uname" class="line_r" >
+							</div>
+							<div class="line">
+								<strong class="line_l">密&nbsp;&nbsp;码</strong>
+								<input type="password" name="upass" id="upass" class="line_r" >
+							</div>
+							<div class="line">
+								<strong class="line_l">确认密码</strong>
+								<input type="password" name="qpass" id="qpass" placeholder="请再次输入密码，进行确认" class="line_r" >
+							</div>
+							<div class="line">
+								<strong class="line_l">邮&nbsp;&nbsp;箱</strong>
+								<input type="text" placeholder="推荐使用最常用邮箱" name="email" id="uemail" class="line_r"  >				
+							</div>
+							<div class="line">
+								<input type="checkbox" id="gree" class="line_l gree_btn" checked="checked" name="clause" >
+								<div class="line_r line_last " id="clause">
+									<label for="gree">我已阅读并同意</label>
+									<a href="#" id="res_tip" class="service">注册服务条款</a>
+								</div>
+							</div>
+							<div class="line">
+								<strong class="line_l">&nbsp;</strong>
+								<input type="submit" value="确认注册" class="line_r fade confirmzc">
+								<input type="hidden" value="0" id="namewrong">
+								<input type="hidden" value="0" id="emailwrong">
+								<span id="errts" style="font-size:12px; color:#f00; display:inline-block; padding-left:20px; line-height:34px;"></span>
+							</div>	
+						</form>	
+					</div>															
+				</div>
+				<div id="res_info" style="width:740px; height: 550px; overflow:scroll; position:fixed; left:50%; top:60%; background:#fff; z-index:100; border-top: 8px solid #323846; display: none;">
+				<h1>博学谷系统平台服务条款</h1>
+				
+				<h2>一、总则</h2>
+				1、为了保护网络信息安全，保障公民、法人和其他组织的合法权益，维护国家安全和社会公共利益，根据国家法律法规以及全国人大常委会的相关规定，北京传智播客教育科技有限公司（以下简称“传智播客”）制定并按照本协议提供网络服务。用户应当充分阅读并同意本协议的全部条款并按照页面上的提示完成全部的注册程序（未成年人应与法定监护人共同完成）。用户在注册过程中点击“同意”或“确认”按钮即表示用户完全接受本协议项下的全部条款，用户选择访问或使用传智播客有关服务，将视为同意接受本协议全部条款的约束。
+				2、除非另有明确规定，传智播客所推出的新产品、新功能和新服务，均无条件的适用本协议。
+				3、传智播客保留在任何时候修改本协议条款的权利，且无需另行通知。用户在使用服务时应关注并遵守。
+				4、用户在使用传智播客提供的各项服务之前，应仔细阅读本协议。如果您不同意本协议或传智播客的修改，可以主动取消传智播客提供的服务；如果您继续使用传智播客服务，则视为您已经接受本协议全部内容，包括传智播客对本协议所做的任何修改。
+				5、用户无论通过何种方式使用传智播客服务，均受本协议约束。
+				<h2>二、用户帐号</h2>
+				1、用户可以通过在本网站注册帐号使用传智播客提供的各项服务。用户注册成功后，传智播客将给予用户一个帐号及相应的密码，在传智播客审核通过后，每个帐号对应一个唯一的名字（或昵称、用户名）。传智播客帐号（包括名字、昵称、用户名等）的所有权归传智播客，用户完成申请注册手续后，获得传智播客帐号的使用权，但仅限为个人而非商业目的使用。
+				2、用户自行保管其帐号和密码。用户帐号、密码使用权仅属于初始申请注册人，禁止赠与、借用、租用、转让或者售卖。
+				3、用户应提供完整、真实、准确和最新的个人资料，该资料对于使用传智播客的服务以及找回丢失的传智播客帐号和密码至关重要。如因注册信息不真实而引起的问题由用户本人承担，传智播客不负任何责任并有权暂停或终止用户的帐号。
+				4、用户帐号和密码遭到他人非法使用或发生其他任何安全问题，用户应当立即通知传智播客。因黑客行为或用户的过错导致帐号、密码被他人非法使用，传智播客不承担任何责任。
+				<h2>三、使用规则</h2>
+				1、用户对以其帐号发生的或通过其帐号发生的一切活动和事件（包括但不限于用户发表的任何内容以及由此产生的任何结果）负全部法律责任。
+				2、用户在使用传智播客服务时，必须遵守中华人民共和国相关法律法规的规定，用户应同意将不会利用传智播客服务进行任何违法或不正当的活动，包括但不限于下列行为：
+				    (1) 上传、张贴、发送、传输、存储或以其他方式提供任何非法、有害、胁迫、骚扰、侵权、中伤、粗俗、猥亵、诽谤、淫秽、暴力、侵害他人隐私、种族歧视或其他令人不快的包括但不限于资讯、资料、文字、软件、音乐、照片、图形、信息或其他资料。 
+				    (2) 冒充任何个人或单位，或以虚伪不实的方式谎称或使人误认为与任何个人或任何单位有关。
+				    (3)宣传伪造的云课堂标题或以其他方式操控识别资料，使他人产生误解。
+				    (4) 干扰或破坏有关服务，或与有关服务连接的任何服务器或网络，或与有关服务连接之网络的任何政策、要求或规定。
+				    (5)采集并存储涉及有关服务任何其他用户的个人信息，以用于任何上述被禁止的活动。
+				    (6)故意或非故意违反任何相关的中国法律、法规、规章、条例等其他具有法律效力的规范。
+				3、用户同意传智播客有权在提供网络服务过程中以各种方式投放各种商业性广告或其他任何类型的商业信息。
+				<h2>四、知识产权</h2>
+				1、传智播客服务中包含的任何文字、图表、音频、视频和/或软件（包括但不限于软件中包含的图表、动画、音频、视频、界面实际、数据和程序、代码、文档）等信息或材料均受著作权法、商标法和/或其它法律法规的保护，未经相关权利人书面同意，用户不得以任何方式使用该等信息或材料，但出于使用传智播客服务目的而使用的除外。
+				2、本协议未授予用户使用传智播客任何商标、服务标记、标识、域名和其他显著品牌特征的权利。
+				3、除本协议明确允许的以外，用户不得以任何形式或任何方式对传智播客服务部分或全部内容进行修改、出租、租赁、出借、出售、分发、复制、创作衍生品或用于任何商业用途。
+				4、若您认为您的知识产权或其他合法权益被侵犯，请向传智播客提供以下资料：
+				    (1)对涉嫌侵权内容拥有知识产权或其他合法权益的权属证明；
+				    (2) 涉嫌侵权内容在本网站上的位置；
+				    (3) 对侵权情况的详细描述；
+				    (4)在权利通知中加入如下关于通知内容真实性的声明：“由以上操作所引起的一切后果，与传智播客无关，由我本人/公司承担。”在签字或加盖公章后，请将上述权利通知书发往以下邮箱：zhanghj@itcast.cn。
+				5、传智播客在收到权利人的通知书后，可依其合理判断，删除该侵犯他人知识产权或其他合法权益的内容。
+				<h2>五、隐私权</h2>
+				1、网站保证不对外公开或向第三方提供单个用户的注册资料及用户在使用网络服务时存储在网站的非公开内容，但下列情况除外：
+				（1）用户本人授权网站透露这些信息；
+				（2）相关的法律法规要求网站提供用户的个人资料。
+				2、在不透露用户隐私资料的前提下，网站有权对整个用户数据库进行分析并对用户数据库进行适当的使用。
+				<h2>六、免责声明</h2>
+				1、鉴于网络服务的特殊性，传智播客不保证网络服务的及时性、安全性和准确性，用户同意传智播客有权不经事先通知，随时变更、中断或终止部分或全部的网络服务而无论同意与否，传智播客对用户和任何第三人均无需承担任何责任。
+				2、用户明确同意其使用传智播客服务所存在的风险及其后果将完全由其自己承担，传智播客对用户不承担任何责任。如因用户违反有关法律、法规或本协议项下的任何条款而给传智播客或任何其他第三人造成损失，用户同意承担由此造成的损害赔偿责任。
+				<h2>七、其他</h2>
+				1、本协议的版权归传智播客所有，传智播客保留对本协议的一切解释和修改权利。
+				2、本协议的订立、执行和争议的解决均应适用中华人民共和国法律。如双方就本协议内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成时，任何一方均可向传智播客所在地有管辖权的人民法院提起诉讼。
+				3、传智播客未行使本协议的任何权利或规定，不构成对前述权利之放弃。
+				4、如本协议中的任何条款完全或部分无效，本协议的其余条款仍有效并且有约束力。
+				5、若您对本协议有任何意见，欢迎垂询传智播客(http://www.itcast.cn/)
+				</div>
+				<!-- @注册模块-end -->
+			</div>
+		</div>
+		<div class="layout_bottom" style="background-color: #2E3340;">
+			<div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+				<!-- @底部信息模块-end -->
+				<div class="footer">
+					<div class="ft_l">
+						<div class="ft_l_txt">
+							<h3>关于我们</h3>
+							<ul>
+							<li><a href="about.html" target="_blank">关于小屋</a></li>
+							<li><a href="about.html" target="_blank">友情赞助</a></li>
+							<li><a href="about.html" target="_blank">广告服务</a></li>
+							<li><a href="about.html" target="_blank">版权声明</a></li>
+							<li><a href="about.html" target="_blank">关于小屋</a></li>
+							</ul>
+						</div>
+						<div class="ft_l_txt">
+							<h3>帮助中心</h3>
+							<ul>
+								<li><a href="about.html" target="_blank">新手指南</a></li>
+								<li><a href="about.html" target="_blank">常见问题</a></li>
+								<li><a href="about.html" target="_blank">密码找回</a></li>
+								<li><a href="about.html" target="_blank">意见反馈</a></li>
+							</ul>
+						</div>
+						<div class="ft_l_txt">
+							<h3>站内地图</h3>
+							<ul>
+								<li><a href="map/22.html" target="_blank">GitHup地址</a></li>
+								<li><a href="map/23.html" target="_blank">SVN代码地址</a></li>
+								<li><a href="map/26.html" target="_blank">百度网盘资源的</a></li>
+								<li><a href="map/22.html" target="_blank">GitHup地址</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="ft_c">
+						<div class="it_wx">
+							<p>微信扫一扫</p>
+							<img src="upload/weixin.jpg" width="120" height="120" />
+						</div>
+						<div class="boniu_wx">
+							<p>QQ扫一扫</p>
+							<img src="upload/QQ.jpg" width="120" height="120" />
+						</div>
+					</div>
+					<div class="ft_r">
+						<div class="share">
+							<div class="share_in">
+								<div class="bdsharebuttonbox">
+									<a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a>
+									<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+									<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+								</div>
+								<script>
+									window._bd_share_config={"common":{"bdSize":"32"},"share":{}};
+									with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script'))
+										.src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+								</script>
+							</div>
+						</div>
+						<p class="pp2" style="margin-top:28px;">QQ号：332301842</p>
+						<p class="pp2">微信：liwy1024611</p>
+						<p class="pp2">邮箱：liwenyao_java@126.com</p>
+					</div>
+				</div>
+				<!-- @底部信息模块-end -->
+				
+				<!-- @版权模块-start -->
+				<div class="copy">
+					Stay Hungry. Stay Foolish.&nbsp;邮箱: liwenyao_java@126.com&nbsp;QQ: 332301842&nbsp;微信: liwy1024611
+					<br>Copyright &copy; www.oscafe.net  京ICP备15000252号-1
+					<div id="tongji">
+					<script type="text/javascript">
+						var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+						document.write(unescape("%3Cspan id='cnzz_stat_icon_1260684426'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol 
+							+ "s95.cnzz.com/z_stat.php%3Fid%3D1260684426%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+					</script>
+					</div>
+				</div>
+				<!-- @版权模块-end -->
+			</div>
+		</div>
+		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/verify.js"></script>
+		<script type="text/javascript">
+			//弹出声明
+			var $res_info=$("#res_info");
+			var $res_info_w=$res_info.width()/2;
+			var $res_info_h=$res_info.height()/2;
+			$res_info.css({"margin-left": - $res_info_w +"px","margin-top":- $res_info_h + "px"});
+			
+			$(".service").click(function(){
+				$(".zzbd").fadeIn();
+				$res_info.fadeIn("fast").animate({
+						"top":"50%",
+				},250);
+			});
+			$(".zzbd").click(function(){
+				$(this).fadeOut();
+				$res_info.fadeOut("fast");	
+			});
+			$("#closelg").click(function(){
+				$(".zzbd").fadeOut();
+				$res_info.fadeOut("fast");	
+			});
+			
+			
+			//注册功能
+			var uname = $("#uname");
+			var upass = $("#upass");
+			var qpass = $("#qpass");
+			var email = $("#uemail");
+			var clause = $("#gree");
+			var clausetips = $("#clause");
+			textMouseleave(uname);
+			textMouseleave(upass);
+			textMouseleave(qpass);
+			textMouseleave(email);
+			ajaxVerifyName('register/ajaxcheckname.html','uname',uname);
+			ajaxVerifyEmail('register/ajaxcheckemail.html','email',email);
+			queryPassword(upass,qpass);
+		
+			$("#registerform").submit( function () {
+				ajaxFormName('register/ajaxcheckname.html','uname',uname);
+				ajaxFormEmail('register/ajaxcheckemail.html','email',email);
+				if( textRequired(uname) && textRequired(upass) && textRequired(qpass) && queryPassword(upass,qpass) && textRequired(email) && checkRequired(clausetips,clause) && ($('#namewrong').val() == 1) && ($('#emailwrong').val() == 1) ){
+					return true;
+				}else{
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

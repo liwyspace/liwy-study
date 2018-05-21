@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>开源小屋</title>
+		<link rel="stylesheet" href="styles/style.css" />
+	</head>
+
+	<body>
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：页头
+        -->
+		<div class="page_full" id="header">
+			<div class="page_center">
+				<div class="index_left">
+					<div id="logo"><font>开源小屋</font>
+					</div>
+					<ul id="nav">
+						<li class="select"><a href="index.html" hidefocus="true">首页</a>
+						</li>
+						<li><a href="note.html" hidefocus="true">笔记</a>
+						</li>
+						<li><a href="soft.html" hidefocus="true">小软</a>
+						</li>
+						<li><a href="help.html" hidefocus="true">赞助</a>
+						</li>
+					</ul>
+				</div>
+				<div class="index_right" id="search">
+					<input class="search_content" onfocus="if (value =='请输入'){value =''}" onblur="if (value ==''){value='请输入'}" type="text" value="请输入" />
+					<input class="search_button" type="submit" value="查询" hidefocus="true"/>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：小软
+        -->
+		<div class="page_full top_m12">
+			<div class="page_center">
+				<div class="index_left" style="height: 300px; background-color: #F08876;">
+					<!-- 图片轮播 -->
+					<div id="slides" style="display: none;">
+						<img src="images/example-slide-1.jpg" alt="#" />
+						<img src="images/example-slide-2.jpg" alt="#" />
+						<img src="images/example-slide-3.jpg" alt="#" />
+					</div>
+				</div>
+				<div class="index_right">
+					<div class="block">
+						<div class="title">最新小软</div>
+						<ul class="list">
+							<li><font>[JAVA]</font> java开发第一节课</li>
+							<li><font>[PHP]</font> c++书记烈性六点十分大方</li>
+							<li><font>[Android]</font> Android鼎折覆餗受到罚款</li>
+							<li><font>[C++]</font> Android鼎折覆餗受到罚款</li>
+							<li><font>[JAVA]</font> java开发第一节课</li>
+							<li><font>[PHP]</font> c++书记烈性六点十分大方</li>
+							<li><font>[Android]</font> Android鼎折覆餗受到罚款</li>
+							<li><font>[C++]</font> Android鼎折覆餗受到罚款</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：快速导航
+        -->
+		<div class="page_full top_m12">
+			<div class="page_center" id="quick">
+				<ul>
+					<li style="background-color: #ab3334;">JAVA</li>
+					<li style="background-color: #443355;">C++</li>
+					<li style="background-color: #225645;">Android</li>
+					<li style="background-color: #ab3334;">PHP</li>
+					<li style="background-color: #443355;">Linux</li>
+					<li style="background-color: #225645;">JavaScript</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：笔记
+        -->
+		<div class="page_full top_m12">
+			<div class="page_center">
+				<div class="index_left">
+					<div class="block" id="index_article">
+						<div class="title">Java基本数据类型</div>
+						<div class="article">
+							<p>
+								这样肯定会出错, 如果你的 CLASSPATH 没有改动的话. 我想大家应该知道为什么错了 吧, 那么怎么改呢? 前面说过, 用户类路径就是一些包含你所需要的类的目录, .jar 档案 包, .zip 包. 现在没有生成包, 所以只好把 HelloWorld.class 所在的目录加到 CLASSPATH 了, 根据前面的做法, 再运行一次, 看看, 呵呵, 成功了, 换个路径, 又成功了!! 不仅仅可 以直接运行其中的类, 当你要 import 其中的 某些类时, 同样处理.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="index_right">
+					<div class="block">
+						<div class="title">最新笔记</div>
+						<ul class="list">
+							<li><font>[JAVA]</font> java开发第一节课</li>
+							<li><font>[PHP]</font> c++书记烈性六点十分大方</li>
+							<li><font>[Android]</font> Android鼎折覆餗受到罚款</li>
+							<li><font>[C++]</font> Android鼎折覆餗受到罚款</li>
+						</ul>
+					</div>
+					<div class="block top_m12">
+						<div class="title">最热笔记</div>
+						<ul class="list">
+							<li><font>[JAVA]</font> java开发第一节课</li>
+							<li><font>[Android]</font> c++书记烈性六点十分大方</li>
+							<li><font>[JAVA]</font> Android鼎折覆餗受到罚款</li>
+							<li><font>[JAVA]</font> Android鼎折覆餗受到罚款</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：友情链接、分享
+        -->
+		<div class="page_full top_m12" id="linkshare">
+			<div class="page_center">
+				<div class="index_left" id="link">
+					<div class="link_title"><span>友情链接</span>
+					</div>
+					<ul>
+						<li><a target="_blank" href="http://www.itxueyuan.org/">JS中文教程</a>
+						</li>
+						<li><a target="_blank" href="http://www.js-css.cn/">JS代码特效</a>
+						</li>
+						<li><a target="_blank" href="http://www.iconfont.cn/">矢量图标库</a>
+						</li>
+						<li><a target="_blank" href="http://man.linuxde.net/">Linux命令大全</a>
+						</li>
+						<li><a target="_blank" href="http://vbird.dic.ksu.edu.tw/">鸟哥linux私房菜</a>
+						</li>
+						<li><a target="_blank" href="http://hukai.me/android-training-course-in-chinese/basics/index.html">Android教程</a>
+						</li>
+						<li><a target="_blank" href="http://www.konghao.org/index">孔浩学习空间</a>
+						</li>
+						<li><a target="_blank" href="https://github.com/Trinea/android-open-project">Android开源项目</a>
+						</li>
+					</ul>
+				</div>
+				<div class="index_right" id="share">
+					<div id="web_name"><font>开源小屋</font>
+					</div>
+					<div id="web_http"><font>www.oscafe.net</font>
+					</div>
+					<div id="share_button">
+						<div class="bdsharebuttonbox" data-tag="share_1" style="float: right;">
+							<a class="bds_more" data-cmd="more"></a>
+							<a class="bds_tsina" data-cmd="tsina"></a>
+							<a class="bds_tqq" data-cmd="tqq"></a>
+							<a class="bds_renren" data-cmd="renren"></a>
+							<a class="bds_qzone" data-cmd="qzone"></a>
+							<a class="bds_kaixin001" data-cmd="kaixin001"></a>
+							<a class="bds_douban" data-cmd="douban"></a>
+							<a class="bds_weixin" data-cmd="weixin"></a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：关于、版权
+        -->
+		<div class="page_full" id="footer">
+			<div class="page_center">
+				<ul class="index_left">
+					<li><a href="about.html">关于我们</a>
+					</li>
+					<li><a href="help.html">友情赞助</a>
+					</li>
+					<li><a href="suggest.heml">意见反馈</a>
+					</li>
+					<li><a href="advert.html">广告服务</a>
+					</li>
+				</ul>
+				<div id="copyright" class="index_right">
+					<font>Copyright&nbsp;&copy;&nbsp;www.oscafe.net&nbsp;&nbsp;京ICP备15000252号-1</font>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-28
+        	描述：轮播图脚本
+        -->
+		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="vendors/jquery.slides.min.js"></script>
+		<script>
+			$(function() {
+				$('#slides').slidesjs({
+					width: 634,
+					height: 328,
+					navigation: {
+						active: true,
+						effect: "fade"
+					},
+					pagination: {
+						active: true,
+						effect: "fade"
+					},
+					play: {
+						active: true,
+						effect: "fade",
+						auto: true,
+						interval: 6000
+					},
+					callback: {
+						complete: function(number) {
+							// Do something awesome!
+							// Passes slide number at end of animation
+							$("#xiao_ul_" + number).css("background-color", "#ab3334");
+							$("#xiao_ul_" + number).siblings().css("background-color", "#aa8185");
+						}
+					}
+				});
+			});
+		</script>
+
+		<!--
+        	作者：liwenyao_java@126.com
+        	时间：2015-01-29
+        	描述：分享脚本
+        -->
+		<script>
+			window._bd_share_config = {
+				common: {
+					bdText: '开源小屋（oscafe.net）记录了关于java|oracle|mysql|js|php|c++|linux等学习笔记！',
+					bdDesc: '还不错哦，教程很详细！还有一些程序的源码下载，很好！',
+					bdUrl: 'http://www.oscafe.net',
+					bdPic: 'http://www.oscafe.net/images/example-slide-1.jpg'
+				},
+				share: [{
+					"bdSize": 24
+				}]
+			}
+			with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+		</script>
+	</body>
+
+</html>

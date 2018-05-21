@@ -1,0 +1,30 @@
+{
+  "name": "liwy-web-cms",
+  "description": "LIWY-CMS内容管理系统前端页面",
+  "main": "index.js",
+  "authors": [
+    "LIWY"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "liwy",
+    "gulp",
+    "bootstrap",
+    "cms"
+  ],
+  "homepage": "https://github.com/liwyspace/liwy-web-cms",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2",
+    "Slides": "nathansearles/Slides"
+  }
+}

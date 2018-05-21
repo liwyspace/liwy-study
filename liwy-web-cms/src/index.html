@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>主题列表</title>
+</head>
+<body>
+    <h1>1. LIWY-CMS 主要主题</h1>
+    <ul>
+        <li>第一版：<a target="_blank" href="theme-cafe/index.html">Theme-Cafe (咖啡屋)</a></li>
+        <li>第二版：<a target="_blank" href="theme-grassland/index.html">Theme-Grassland (草原)</a></li>
+        <li>第三版：<a target="_blank" href="theme-redwine/index.html">Theme-Redwine (红酒)</a></li>
+        <li>第四版：<a target="_blank" href="theme-ocean/index.html">Theme-Ocean (海洋)</a></li>
+    </ul>
+
+    <h1>2. 主题特点</h1>
+    <h2>2.1 Theme-Cafe(咖啡屋)</h2>
+    <ul>
+        <li>css+js</li>
+        <li>兼容IE6+</li>
+        <li>兼容手机</li>
+    </ul>
+    <h2>2.4 Theme-Grassland (草原)</h2>
+    <ul>
+        <li>css+js</li>
+        <li>bootstrap</li>
+        <li>兼容IE8+</li>
+        <li>兼容手机</li>
+    </ul>
+    <h2>2.3 Theme-Redwine (红酒)</h2>
+    <ul>
+        <li>css+js</li>
+        <li>bootstrap</li>
+        <li>兼容IE8+</li>
+        <li>兼容手机</li>
+    </ul>
+    <h2>2.4 Theme-Ocean (海洋)</h2>
+    <ul>
+        <li>css+js</li>
+        <li>bootstrap</li>
+        <li>兼容IE8+</li>
+        <li>兼容手机</li>
+    </ul>
+
+    <h1>3. 补充知识</h1>
+    <h2>3.1 IE兼容性问题</h2>
+    <ul>
+        <li>
+            <pre>
+Feature Internet    Explorer 8     Internet Explorer 9
+border-radius       不支持         支持
+box-shadow          不支持         支持
+transform           不支持         支持, with -ms prefix
+transition          不支持
+placeholder         不支持
+            </pre>
+        </li>
+        <li>
+            Internet Explorer 8 需要 Respond.js 配合才能实现对媒体查询（media query）的支持。
+        </li>
+        <li>
+            Respond.js 不支持通过 @import 指令所引入的 CSS 文件。例如，Drupal 一般被配置为通过 @import 指令引入CSS文件，Respond.js 对其将无法起到作用。
+        </li>
+        <li>
+            当 box-sizing: border-box; 与 min-width、max-width、min-height 或 max-height 一同使用时，IE8 不能完全支持 box-sizing 属性。
+        </li>
+        <li>
+            当 @font-face 与 :before 在 IE8 下共同使用时会出现问题。
+        </li>
+        <li>
+            Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下，建议将此 <meta> 标签加入到你的页面中：
+            <pre>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</pre>
+        </li>
+        <li>
+            将下面的 <meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面：
+            <pre>&lt;meta name="renderer" content="webkit"&gt;</pre>
+        </li>
+    </ul>
+    
+</body>
+</html>

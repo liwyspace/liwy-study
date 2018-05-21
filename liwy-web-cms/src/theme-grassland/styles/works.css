@@ -1,0 +1,289 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	  font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+	  background-color: #F5F5F5;
+}
+a{
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+}
+ul{
+	list-style: none;
+}
+.clear{
+	clear: both;
+}
+
+.page_full{
+	width: 100%;
+}
+.page_center{
+	width: 1160px;
+	max-width: 1160px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.page_left{
+	float: left;
+}
+.page_right{
+	float: right;
+}
+.page_model{
+	margin-top: 20px;
+	float: left;
+}
+
+/*======首页顶部区域======*/
+.header{
+	border-bottom: 1px solid #e9e9e9;
+	background: #ffffff;
+	padding: 16px 0px;
+}
+
+/*----logo模块*/
+.logo{
+	width: 145px;
+	height: 36px;
+	background: url(../images/l4footLogo.png) no-repeat;
+	float: left;
+}
+
+/*----menu模块*/
+.menu{
+	list-style: none;
+	float: left;
+	margin-left: 15px;
+}
+.menu li{
+	float: left;
+	height: 36px;
+	line-height: 36px;
+}
+.menu a{
+	display: block;
+	height: 100%;
+	color: #666666;
+	font-size: 14px;
+	padding: 0px 20px;
+}
+.menu a:hover{
+	background-color: #5ECFBA;
+}
+
+/*----serach模块*/
+.search{
+	width: 250px;
+	height: 34px;
+	background: #ffffff;
+	border: 1px solid #e9e9e9;
+	padding: 0;
+	float: left;
+}
+.search .searchTxt {
+	width: 202px;
+	height: 32px;
+	border: 1px solid #FFFFFF;
+	font-size: 14px;
+	padding-left: 10px;
+	color: #000;
+	float: left;
+	outline: none;
+}
+.search .searchBtn {
+	display: block;
+	width: 36px;
+	height: 34px;
+	background: url(../images/l4re_sreach.png) center center no-repeat;
+	float: left;
+}
+
+/*----login_area模块*/
+.login_area{
+	float: left;
+}
+.login_area a{
+	float: left;
+	width: 70px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #666666;
+	border-radius: 2px;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	margin-left: 12px;
+	background-color: #F5F5F5;
+}
+.login_area a:hover{
+	background-color: #5ECFBA;
+	color: #FFFFFF;
+}
+
+/*======首页中间区域======*/
+.mainer .page_left{
+	width: 838px;
+	padding-bottom: 20px;
+}
+.mainer .page_right{
+	width: 301px;
+	padding-bottom: 20px;
+}
+
+/*----jianjie模块*/
+.jianjie{
+	width: 838px; 
+	background-color: #FFFFFF;
+}
+.jianjie_l{
+	width: 347px;
+	float: left;
+}
+.jianjie_l img{
+	float: left;
+}
+.jianjie_r{
+	width: 480px;
+	float: right;
+}
+
+/*----loading模块*/
+.loading{
+	width: 838px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	background-color: #E9E9E9;
+}
+.loading a{
+	display: block;
+}
+.loading a:hover{
+	color: #5ECFBA;
+}
+
+
+/*----linkBtn模块*/
+.linkBtn a{
+	color: #FFFFFF;
+	display:block; 
+	width: 145px; 
+	height: 42px; 
+	background-color: #5ECFBA; 
+	float: left; 
+	line-height: 42px; 
+	text-align: center;
+}
+.linkBtn a+a{
+	margin-left: 10px;
+}
+.linkBtn i{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/icon-sprite.png) -184px -38px no-repeat;
+}
+
+/*======首页底部区域======*/
+.footer{
+	background-color: #F0F0F0;
+	padding-bottom: 20px;
+}
+/*----fd_link模块*/
+.fd_link{
+	float: left;
+	width: 578px;
+}
+.fd_link h2{
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	float: left;
+	font-size: 16px;
+	color: #999999;
+}
+.fd_link ul{
+	float: left;
+}
+.fd_link li{
+	float: left;
+	margin-right: 10px;
+	font-size: 10px;
+	height: 24px;
+	line-height: 24px;
+}
+.fd_link li a{
+	color: #999999;
+}
+.fd_link li a:hover{
+	color: #5ECFBA;
+}
+/*----sit_map模块*/
+.sit_map{
+	float: right;
+	width: 204px;
+}
+.sit_map h2{
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	float: left;
+	font-size: 16px;
+	color: #999999;
+}
+.sit_map ul{
+	float: left;
+}
+.sit_map li{
+	float: left;
+	width: 82px;
+	padding-right: 20px;
+	font-size: 10px;
+	height: 24px;
+	line-height: 24px;
+}
+.sit_map li a{
+	color: #999999;
+}
+.sit_map li a:hover{
+	color: #5ECFBA;
+}
+
+/*======首页版权区域======*/
+.copyright{
+	width: 100%;
+	background-color: #E9E9E9;
+	padding: 20px 0px;
+}
+.copyright p{
+	display: block;
+	font-size: 14px;
+	color: #999999;
+	text-align: center;
+}
+
+/*----share模块*/
+.share{
+	width: 301px;
+}
+.share img{
+	height: 114px;
+	float: left;
+}
+.share .bdsharebuttonbox{
+	float: right;
+	width: 160px;
+}
+.share p{
+	float: right; 
+	width: 160px; 
+	height: 42px; 
+	line-height: 50px; 
+	font-size: 14px;
+	color: #999999;
+}

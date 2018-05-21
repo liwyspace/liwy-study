@@ -1,0 +1,233 @@
+
+/*banner start*/
+.liwy-banner {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #FFF;
+    background: url("../images/banner-bg.png") center no-repeat;
+    .banner-btn-box {
+        width: 50%;
+        height: 100px;
+        margin-top: 270px;
+        position: relative;
+        .liwy-banner-btn {
+            position: absolute;
+            right: -70px;
+            width: 140px;
+            padding: 8px 14px!important;
+            transition: all 0.2s ease-in-out;
+
+            .split-line {
+                margin: 0 14px;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .liwy-banner {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        background: url(../images/phone-banner.jpg) center no-repeat;
+        background-size: contain;
+    }
+}
+
+/*banner end*/
+
+/*产品 start*/
+.liwy-products {
+    h1 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+    }
+    .product-item {
+        transition: background 0.3s ease;
+        .product-center {
+            height: 540px;
+            border: 1px solid #ececec;
+            padding: 10px 30px 20px;
+            text-align: center;
+
+            img {
+                margin-bottom: 20px;
+                width: 180px;
+                margin-top: 10px;
+                border-radius: 0;
+            }
+            h2 {
+                font-size: 18px;
+                color: #333;
+            }
+            p {
+                height: 140px;
+                padding: 0 14px;
+            }
+            .line {
+                height: 1px;
+                width: 93%;
+                background: #ececec;
+                margin: 20px auto;
+            }
+            .effect {
+                span:first-child {
+                    margin-right: 6%;
+                    font-size: 14px;
+                }
+                span:last-child {
+                    color: #d00d24;
+                    font-size: 24px;
+                }
+            }
+            .more {
+                margin-top: 20px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &.active .product-center {
+                -webkit-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                transform: scale(1.05);
+                box-shadow: 0 5px 11px 4px rgba(194,194,194,.31);
+                transition: all .4s ease-out;
+            }
+        }
+    }
+}
+
+/*产品 end*/
+
+/*应用领域 start*/
+.liwy-app {
+
+    h1 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+    }
+    .app-content {
+        width: 600px;
+        height: 514px;
+        margin: 60px auto 0;
+        position: relative;
+
+        .app-img {
+            display: block;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 0;
+        }
+
+        li {
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            background: #e8624e;
+            position: absolute;
+            color: #333;
+            text-align: center;
+            font-size: 16px;
+            transition: all 0.2s ease-out;
+
+            img {
+                width: 60px;
+                height: 60px;
+                margin: 5px auto;
+            }
+            h2 {
+                display: block;
+                padding: 0px;
+                margin: 0px;
+                position: relative;
+                top: 5px;
+                left: 25px;
+                font-size: 14px;
+            }
+            &:hover {
+                transform: scale(1.2);
+                box-shadow: 0 0 0px 8px rgba(233,75,94,.4);
+            }
+        }
+
+        ul:nth-of-type(1) {
+            > li:nth-of-type(1) {
+                left: 240px;
+                top: -9px;
+                background: #e94b5e;
+            }
+            > li:nth-of-type(2) {
+                left: 581px;
+                top: -36px;
+                background: #e94b5e;
+            }
+            > li:nth-of-type(3) {
+                left: 23px;
+                top: -2px;
+                background: #e94b5e;
+            }
+        }
+        ul:nth-of-type(2) {
+            > li:nth-of-type(1) {
+                left: -93px;
+                top: 195px;
+                background: #e94b5e;
+            }
+            > li:nth-of-type(2) {
+                left: 455px;
+                top: 125px;
+                background: #e94b5e;
+            }
+            > li:nth-of-type(3) {
+                left: 554px;
+                top: 236px;
+                background: #e94b5e;
+            }
+        }
+        ul:nth-of-type(3) {
+            > li:nth-of-type(1) {
+                left: 211px;
+                top: 291px;
+                background: #e94b5e;
+            }
+            > li:nth-of-type(2) {
+                left: 111px;
+                top: 388px;
+                background: #e94b5e;
+            }
+            > li:nth-of-type(3) {
+                left: 400px;
+                top: 365px;
+                background: #e94b5e;
+            }
+        }
+    }
+    
+}
+/*应用领域 end*/
+
+/*照片墙 start*/
+.liwy-photo-wall {
+    ul {
+        li {
+            position: relative;
+            width: 20%;
+            height: 132px;
+            border-bottom: 1px dashed #dcdcdc;
+            border-right: 1px dashed #dcdcdc;
+            float:left;
+
+            img {
+                transition: all 0.2s ease-out;
+                transform: scale(.8);
+            }
+            :hover img {
+                transform: scale(1);
+            }
+        }
+    }
+}
+/*照片墙 end*/

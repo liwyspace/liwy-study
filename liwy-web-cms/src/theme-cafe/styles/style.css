@@ -1,0 +1,436 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: helvetica, tahoma, arial, sans-serif;
+	font-size: 14px;
+	color: #333;
+	background-color: #F5F5F5;
+}
+a {
+	text-decoration: none;
+}
+a:focus {
+     outline:none;
+     -moz-outline:none;
+}
+ul {
+	list-style: none;
+}
+img {
+	border: 0;
+}
+.top_m12 {
+	margin-top: 12px;
+}
+.clear {
+	clear: both;
+}
+/*----comment----*/
+
+.page_full {
+	width: 100%;
+	height: auto;
+}
+.page_center {
+	width: 960px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.index_left {
+	width: 634px;
+	height: auto;
+	float: left;
+}
+.index_right {
+	width: 314px;
+	height: auto;
+	float: right;
+}
+.note_left {
+	width: 200px;
+	height: auto;
+	float: left;
+}
+.note_right {
+	width: 748px;
+	height: auto;
+	float: right;
+}
+.block {
+	background-color: #FFF;
+	border: 1px solid #EEE;
+}
+#index_article {
+	height: 390px;
+}
+/*文章标题*/
+
+.title {
+	padding: 0px 6px;
+	height: 32px;
+	border-bottom: 4px solid #A64632;
+	line-height: 36px;
+	color: #AE4934;
+	font-size: 16px;
+}
+/*文章列表*/
+
+.list {
+	padding: 6px;
+	height: auto;
+	list-style: none;
+}
+.list li {
+	width: 100%;
+	height: 34px;
+	border-bottom: 1px dashed #9E2020;
+	line-height: 34px;
+}
+.list li font {
+	color: #772211;
+}
+/*文章内容*/
+
+.article {
+	padding: 12px 6px 6px 6px;
+	height: auto;
+}
+p {
+	line-height: 24px;
+	text-indent: 2em;
+}
+/*----header----*/
+
+#header {
+	background-color: #772211;
+}
+/*logo*/
+
+#logo {
+	width: auto;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+}
+#logo font {
+	font-size: 32px;
+	font-weight: bold;
+	color: #F5F5F5;
+}
+/*导航*/
+
+#nav {
+	width: auto;
+	height: auto;
+	float: right;
+	margin-left: 60px;
+}
+#nav li {
+	width: 80px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+}
+#nav .select {
+	background-color: #A64632;
+}
+#nav li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	color: #F5F5DC;
+}
+/*搜索*/
+
+#search {
+	background-color: #A64632;
+	float: right;
+	margin-top: 10px;
+}
+.search_content {
+	display: block;
+	width: 220px;
+	height: 28px;
+	padding-left: 6px;
+	padding-right: 6px;
+	line-height: 30px;
+	font-size: 16px;
+	border: 1px solid #A64632;
+	float: left;
+	color: #666;
+}
+.search_button {
+	width: 80px;
+	height: 30px;
+	border: 0;
+	cursor: pointer;
+	letter-spacing: 1px;
+	background-color: #A64632;
+	float: left;
+}
+/*----linkshare----*/
+/*友情链接*/
+
+#linkshare {
+	background-color: #CFCFCF;
+}
+.link_title {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+.link_title span {
+	margin-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #666;
+}
+#link ul {
+	width: 100%;
+	height: auto;
+}
+#link ul li {
+	float: left;
+	width: 120px;
+	height: 34px;
+	padding: 0px 10px;
+}
+#link ul li a {
+	color: #666;
+}
+#link ul li a:hover {
+	color: #333;
+}
+/*分享*/
+
+#share {
+	text-align: right;
+}
+#web_name {
+	width: 100%;
+	height: 50px;
+	line-height: 66px;
+}
+#web_name font {
+	font-size: 34px;
+	font-weight: bold;
+	color: #666;
+	letter-spacing: 5px;
+}
+#web_http {
+	width: 100%;
+	height: 30px;
+}
+#web_http font {
+	font-size: 18px;
+	font-weight: bold;
+	color: #AE6954;
+	letter-spacing: 2px;
+}
+#share_button {
+	width: 100%;
+	height: auto;
+}
+/*----footer----*/
+
+#footer {
+	height: 40px;
+	line-height: 40px;
+	background-color: #666;
+	overflow: hidden;
+}
+#footer ul {
+	overflow: hidden;
+}
+#footer ul li {
+	width: auto;
+	height: 100%;
+	float: left;
+	padding: 0px 10px;
+}
+#footer ul li a {
+	color: #333;
+}
+#footer ul li a:hover {
+	color: #000;
+}
+#copyright {
+	text-align: right;
+	overflow: hidden;
+}
+#copyright font {
+	font-size: 12px;
+}
+/*----quick----*/
+
+#quick ul {
+	list-style: none;
+}
+#quick li {
+	float: left;
+	width: 160px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #dda185;
+}
+/*--soft*/
+
+#slides .slidesjs-navigation {
+	position: relative;
+	margin-top: -25px;
+	z-index: 99;
+}
+a.slidesjs-next,
+a.slidesjs-previous,
+a.slidesjs-play,
+a.slidesjs-stop {
+	background-image: url(../images/btns-next-prev.png);
+	background-repeat: no-repeat;
+	display: block;
+	width: 12px;
+	height: 18px;
+	overflow: hidden;
+	text-indent: -9999px;
+	float: left;
+	margin-right: 5px;
+}
+a.slidesjs-next {
+	margin-left: 22px;
+	background-position: -12px 0;
+}
+a:hover.slidesjs-next {
+	background-position: -12px -18px;
+}
+a.slidesjs-previous {
+	margin-left: 5px;
+	background-position: 0 0;
+}
+a:hover.slidesjs-previous {
+	background-position: 0 -18px;
+}
+a.slidesjs-play {
+	margin-left: 39px;
+	width: 15px;
+	background-position: -25px 0;
+}
+a:hover.slidesjs-play {
+	background-position: -25px -18px;
+}
+a.slidesjs-stop {
+	margin-left: 39px;
+	width: 18px;
+	background-position: -41px 0;
+}
+a:hover.slidesjs-stop {
+	background-position: -41px -18px;
+}
+.slidesjs-pagination {
+	list-style: none;
+	position: relative;
+	float: right;
+	margin-top: -20px;
+	margin-right: 5px;
+	z-index: 99;
+}
+.slidesjs-pagination li {
+	float: left;
+	margin: 0 1px;
+}
+.slidesjs-pagination li a {
+	display: block;
+	width: 13px;
+	height: 0;
+	padding-top: 13px;
+	background-image: url(../images/pagination.png);
+	background-position: 0 0;
+	float: left;
+	overflow: hidden;
+}
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+	background-position: 0 -13px
+}
+.slidesjs-pagination li a:hover {
+	background-position: 0 -26px
+}
+#slides a:link,
+#slides a:visited {
+	color: #333
+}
+#slides a:hover,
+#slides a:active {
+	color: #9e2020
+}
+/*--------note.html--------*/
+.level1 {
+	background-color: #666;
+}
+.level1 a {
+	display: block;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	cursor: pointer;
+}
+.level1 a:hover {
+	background-color: #772211;
+}
+.level1 a font {
+	margin-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #F5F5DC;
+}
+.level2 {
+	display: none;
+	padding-top: 6px;
+}
+.level2 li {
+	height: 34px;
+	line-height: 34px;
+	border-bottom: 1px dashed #CCC;
+}
+.level2 li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	color: #666;
+}
+.level2 li a:hover {
+	color: #772211;
+}
+.level2 li a font {
+	margin-left: 20px;
+	letter-spacing: 1px;
+}
+.selbg {
+	background-color: #772211;
+}
+
+/*--返回顶部--*/
+.scroll {
+	width: 60px;
+	height: 60px;
+	background: #772211;
+	line-height: 60px;
+	text-align: center;
+	position: fixed;
+	right: 50px;
+	bottom: 65px;
+	cursor: pointer;
+	font-size: 26px;
+	font-weight: bold;
+	color: #fff;
+	
+}

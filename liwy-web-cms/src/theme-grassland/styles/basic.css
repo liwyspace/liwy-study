@@ -1,0 +1,328 @@
+/*
+ * ====字体====
+ * 正文：14px
+ * 
+ * ====颜色====
+ * 页面背景：#F5F5F5
+ * 正文字体：#333333
+ * 浅色字体：#666666
+ * 灰色：#E9E9E9
+ * 主题：#5ECFBA
+ * 
+ */
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	  font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+	  background-color: #F5F5F5;
+	  font-size: 14px;
+	  color: #333333;
+}
+input{
+	outline: none;
+}
+a{
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+}
+ul{
+	list-style: none;
+}
+.clear{
+	clear: both;
+}
+
+/*=====页面布局公共类====*/
+.layout_full{
+	width: 100%;
+}
+.layout_center{
+	width: 1160px;
+	max-width: 1160px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.layout_left{
+	float: left;
+}
+.layout_right{
+	float: right;
+}
+.layout_model{
+	margin-top: 20px;
+	float: left;
+}
+
+
+/*======页面顶部区域======*/
+.header{
+	background: #FFFFFF;
+	border-bottom: 1px solid #E9E9E9;
+	padding: 16px 0px;
+}
+
+/*logo标志模块*/
+.logo{
+	width: 145px;
+	height: 36px;
+	background: url(../images/l4footLogo.png) no-repeat;
+	float: left;
+}
+
+/*navigate导航模块*/
+.navigate{
+	float: left;
+	margin-left: 15px;
+}
+.navigate>li{
+	float: left;
+	height: 36px;
+	line-height: 36px;
+}
+.navigate>li>a{
+	display: block;
+	color: #666666;
+	padding: 0px 20px;
+}
+.navigate>li>a:hover{
+	background-color: #5ECFBA;
+}
+
+/*serach搜索模块*/
+.search{
+	width: 250px;
+	height: 34px;
+	background: #FFFFFF;
+	border: 1px solid #E9E9E9;
+	float: left;
+}
+.search>input{
+	width: 202px;
+	height: 32px;
+	border: 1px solid #FFFFFF;
+	font-size: 14px;
+	padding-left: 10px;
+	color: #666666;
+	float: left;
+}
+.search>a{
+	display: block;
+	width: 36px;
+	height: 34px;
+	background: url(../images/l4re_sreach.png) center center no-repeat;
+	float: left;
+}
+
+/*loginInfo登陆信息模块*/
+.loginInfo{
+	float: left;
+}
+.loginInfo a{
+	display: inline-block;
+	float: left;
+	width: 70px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	color: #666666;
+	margin-left: 12px;
+	background-color: #F5F5F5;
+}
+.loginInfo a:hover{
+	background-color: #5ECFBA;
+	color: #FFFFFF;
+}
+
+/*======页面中间区域======*/
+.mainer .layout_left{
+	width: 838px;
+	padding-bottom: 20px;
+}
+.mainer .layout_right{
+	width: 301px;
+	padding-bottom: 20px;
+}
+
+/*banner横幅模块*/
+.banner{
+	width: 838px; 
+	height: 330px;
+}
+.banner a,img{
+	float: left;
+}
+.banner>.banner_l{
+	float: left;
+	width: 580px;
+}
+.banner>.banner_r{
+	float: right;
+	width: 250px;
+}
+.banner>.banner_r>a+a{
+	margin-top: 10px;
+}
+
+
+/*quickLink快捷链接模块*/
+.quickLink{
+	width: 100%; 
+	height: 45px; 
+	line-height: 45px;
+	background-color: #FFFFFF;
+}
+.quickLink ul,li{
+	float: left;
+}
+.quickLink ul>li>a{
+	display: block;
+	padding: 0px 16px;
+	color: #666666;
+}
+.quickLink ul>li:first-child>a{
+	color: #5ECFBA;
+}
+.quickLink ul>li>a:hover{
+	color: #5ECFBA;
+}
+
+/*synopsis梗概模块*/
+.synopsis{
+	width: 838px;
+	background-color: #FFFFFF;
+}
+.synopsis .synopsis_l{
+	float: left;
+	width: 160px;
+	padding: 16px;
+}
+.synopsis .synopsis_l img{
+	float: left;
+	width: 100%;
+}
+.synopsis .synopsis_r{
+	float: left;
+	width: 614px;
+	padding: 16px;
+}
+.synopsis .synopsis_r h2{
+	font-size: 18px;
+}
+.synopsis .synopsis_r p{
+	display: block;
+	height: 74px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.synopsis span{
+	display: table-cell;
+	height: 32px;
+	line-height: 32px;
+	padding-right: 20px;
+}
+.synopsis span i{
+	display: inline-block;
+	width: 20px;
+	height: 18px;
+	background: url(../images/icon-sprite.png) no-repeat;
+}
+.synopsis .author>i{
+	background-position: 0px -76px;
+}
+.synopsis .time>i{
+	background-position: 0px -76px;
+}
+.synopsis .hot>i{
+	background-position: 0px -76px;
+}
+.synopsis .love>i{
+	background-position: 0px -151px;
+}
+.synopsis .comment>i{
+	background-position: 0px -112px;
+}
+
+/*loading加载模块*/
+.loading{
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	background-color: #E9E9E9;
+}
+.loading a{
+	display: block;
+}
+.loading a:hover{
+	color: #5ECFBA;
+}
+
+/*btnList按钮列表模块*/
+.btnList a{
+	color: #FFFFFF;
+	display:block; 
+	width: 145px; 
+	height: 42px; 
+	background-color: #5ECFBA; 
+	float: left; 
+	line-height: 42px; 
+	text-align: center;
+}
+.btnList a+a{
+	margin-left: 10px;
+}
+.btnList i{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/icon-sprite.png) -184px -38px no-repeat;
+}
+
+.artList{
+	background-color: #FFFFFF;
+	width: 100%;
+}
+.artList h2{
+	padding: 10px;
+}
+.artList ul{
+	float: left;
+	padding: 10px;
+}
+.artList img{
+	width: 100%;
+}
+.artList span{
+	display: block;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

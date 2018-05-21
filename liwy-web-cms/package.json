@@ -1,0 +1,50 @@
+{
+  "name": "liwy-web-cms",
+  "version": "1.0.0",
+  "description": "LIWY-CMS内容管理系统前端页面",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liwyspace/liwy-web-cms.git"
+  },
+  "keywords": [
+    "liwy",
+    "gulp",
+    "bootstrap",
+    "cms"
+  ],
+  "author": "LIWY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liwyspace/liwy-web-cms/issues"
+  },
+  "homepage": "https://github.com/liwyspace/liwy-web-cms#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.13.1",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1"
+  }
+}
