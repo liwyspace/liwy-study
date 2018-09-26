@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>开源小屋-免费提供程序员学习教程，及生活技能。</title>
+    <meta name="keywords" content="开源小屋,Java教程,php教程,网页设计教程,iOS教程,C++教程,C语言教程,游戏开发教程" />
+    <meta name="description" content="开源小屋-提供Java、PHP、网页设计、平面设计、IOS、C++、游戏开发免费视频教程，教程覆盖范围广，包含真实的实战项目。" />
+</head>
+<body>
+#include('../components/upgradeBrowser/upgradeBrowser.html')
+
+<div class="layout_top" style="background-color: #2E3340;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <!-- @导航栏模块-start -->
+        #include('../components/header/header.html')
+        <!-- @导航栏模块-end -->
+    </div>
+</div>
+
+<div class="layout_main" style="margin: 40px 0;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <div style="margin-bottom: 20px;">
+            <!-- @轮播图模块-start -->
+            <div id="bannerbox">
+                <div class="swiper-container" style="cursor:-webkit-grab;">
+                    <span id="banner-left" class="arrow-left" style="display:none;"></span>
+                    <span id="banner-right" class="arrow-right" style="display:none;"></span>
+                    <div class="swiper-wrapper" style="width:11418px; height:317px; -webkit-transform: translate3d(-9515px, 0px, 0px); transition: 1s; -webkit-transition: 1s;">
+                        <a href="#" target="_blank" class="swiper-slide swiper-slide1">
+                            <img src="http://localhost:9000/uploads/57a9693c0a9a0.jpg" width="100%" height="242" />
+                        </a>
+                        <a href="#" target="_blank" class="swiper-slide swiper-slide1">
+                            <img src="http://localhost:9000/uploads/57a9693c0a9a0.jpg" width="100%" height="242" />
+                        </a>
+                    </div>
+                    <div class="pagination">
+                        <span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span>
+                        <span class="swiper-pagination-switch"></span>
+                        <span class="swiper-pagination-switch"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- @轮播图模块-end -->
+        </div>
+        <div class="layout_inner_contex" style="margin-bottom: 20px;">
+            <!-- 标签页 -->
+            #include('../components/tabs/tabs.html')
+            <!-- 图标列表 -->
+            #include('../components/picList/picList.html')
+        </div>
+        <div class="layout_inner_page">
+            <!-- 分页模块 -->
+            #include('../components/page/page.html')
+        </div>
+    </div>
+</div>
+
+
+<div class="layout_bottom" style="background-color: #2E3340;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <!-- @底部信息模块-end -->
+        #include('../components/footer/footer.html')
+        <!-- @底部信息模块-end -->
+    </div>
+</div>
+
+<script type="text/javascript" src="/commons/scripts/vendors/jquery.min.js"></script>
+<script type="text/javascript" src="/commons/scripts/vendors/idangerous.swiper.min.js"></script>
+</body>
+</html>

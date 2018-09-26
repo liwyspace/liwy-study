@@ -1,0 +1,33 @@
+/* @sliderA-start*/
+.sliderCourse {
+    background-color: #FFFFFF;
+    padding: 20px;
+
+    li {
+        height: 36px;
+        line-height: 36px;
+        border-bottom: 1px solid #ebebeb;
+        overflow: hidden;
+
+        a {
+            float: left;
+            color: #666;
+            width: 190px;
+            font-size: 13px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            :hover {
+                color: #2196F3;
+            }
+        }
+
+        span {
+            float: right;
+            color: #323846;
+            font-size: 12px;
+        }
+    }
+}
+/*@sliderA-end*/

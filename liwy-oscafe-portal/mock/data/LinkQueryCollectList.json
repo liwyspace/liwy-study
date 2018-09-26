@@ -1,0 +1,86 @@
+{
+    "returnType": "List",
+    "datas": [
+        {
+            "type": "1",
+            "typeName": "IT综合社区",
+            "collects": [
+                {
+                    "name": "开源小屋",
+                    "url": "http://www.oscafe.net/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "博学谷视频库",
+                    "url": "http://dvd.boxuegu.com/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "中国大学MOOC",
+                    "url": "http://www.icourse163.org/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "UI中国",
+                    "url": "http://www.ui.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "LOGO设计",
+                    "url": "http://www.logoko.com.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "搜狐电视剧",
+                    "url": "http://www.logoko.com.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "优酷电视剧",
+                    "url": "http://www.logoko.com.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "芒果TV电视剧",
+                    "url": "http://www.logoko.com.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "PPTV电影",
+                    "url": "http://www.logoko.com.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                }
+            ]
+        },{
+            "type": "2",
+            "typeName": "LINUX学习网站",
+            "collects": [
+                {
+                    "name": "开源小屋",
+                    "url": "http://www.oscafe.net/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "博学谷视频库",
+                    "url": "http://dvd.boxuegu.com/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "中国大学MOOC",
+                    "url": "http://www.icourse163.org/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "UI中国",
+                    "url": "http://www.ui.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                },
+                {
+                    "name": "LOGO设计",
+                    "url": "http://www.logoko.com.cn/",
+                    "logoPic": "http://localhost:9000/uploads/urlico.png"
+                }
+            ]
+        }
+    ]
+}

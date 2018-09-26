@@ -1,0 +1,32 @@
+/* @pagebox-start */
+div.page {
+    text-align: center;
+    >div {
+        display: inline-block;
+    }
+    >span, a {
+        display: inline-block;
+        margin: 0 3px;
+        line-height: 23px;
+        border: 1px solid #e5e5e5;
+        padding: 5px 14px;
+        background: #FFFFFF;
+    }
+
+    input {
+        width: 18px;
+        padding: 0 10px;
+    }
+
+    a:hover {
+        background: #2196F3;
+        color: #fff;
+        border: 1px solid #2196F3;
+    }
+
+    .cur {
+        background: #2196F3;
+        color: #fff;
+        border: 1px solid #2196F3;
+    }
+}

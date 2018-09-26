@@ -1,0 +1,126 @@
+/*
+ * Header模块样式表
+ * @version: 0.0.1
+ * @author： liwy
+ * @date: 2016-10-26
+ */
+@charset "utf-8";
+
+.header{
+    width:100%;
+    height:80px;
+
+    .head_l{
+        float:left;
+        width:680px;
+        margin-top:17px;
+    }
+
+    h1{
+        float:left;
+        margin-right:60px;
+
+        img{
+            height: 50px;
+        }
+    }
+
+    .nav{
+        float:left;
+        margin-top:13px;
+
+        li{
+            float:left;
+            font-size:18px;
+            margin-right:19px;
+
+            a{
+                color: #ccc;
+
+                :hover{
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .current{
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+
+    .head_r{
+        float:right;
+
+        .search{
+            float:left;
+            width:229px;
+            height:28px;
+            position:relative;
+            margin-top:27px;
+
+            .search_l{
+                float:left;
+                width:193px;
+                padding-left:5px;
+                height:26px;
+                line-height:26px;
+                background:#fff;
+                border:1px solid #fff;
+            }
+
+            .search_r{
+                float:left;
+                width:28px;
+                height:28px;
+                background:#FFF url(./images/search.png) no-repeat 6px 6px;
+                cursor:pointer;
+                text-indent:-9999px;
+            }
+        }
+
+        .quik{
+            float:right;
+            padding-left:30px;
+            margin-top:27px;
+
+            a{
+                font-size:16px;
+                margin-left:18px;
+                line-height:28px;
+                color: #ccc;
+
+                :hover{
+                    color: #fff;
+                }
+            }
+        }
+
+        .userhd{
+            float:left;
+            margin-left: 27px;
+            margin-top:23px;
+            line-height: 36px;
+            position: relative;
+            display: none;
+
+            a{
+                float:left;
+                color: #ccc;
+                margin:0 0px 0 8px;
+
+                :hover{
+                    color: #fff;
+                }
+            }
+
+            img{
+                float:left;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+/* @summary-start */
+.summary {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .hd {
+        border-bottom: 1px solid #D2D2D2;
+        font-size: 16px;
+        color: #323846;
+        position: relative;
+        margin-bottom: 10px;
+
+        h1 {
+            height: 60px;
+            font-size: 26px;
+            line-height: 60px;
+        }
+    }
+    .bd p {
+        line-height: 2em;
+        color: rgb(127, 127, 127);
+    }
+}

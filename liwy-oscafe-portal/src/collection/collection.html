@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="开源小屋,Java教程,php教程,网页设计教程,iOS教程,C++教程,C语言教程,游戏开发教程" />
+    <meta name="description" content="开源小屋-提供Java、PHP、网页设计、平面设计、IOS、C++、游戏开发免费视频教程，教程覆盖范围广，包含真实的实战项目。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>开源小屋 - 收藏页</title>
+</head>
+<body>
+
+#include('../components/upgradeBrowser/upgradeBrowser.html')
+
+<div class="layout_top" style="background-color: #2E3340;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <!-- @导航栏模块-start -->
+        #include('../components/header/header.html')
+        <!-- @导航栏模块-end -->
+    </div>
+</div>
+
+<div class="layout_main" style="margin: 40px 0;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <div class="layout_inner_right" style="width: 310px;float: right;">
+            <div style="width: 100%;margin-bottom: 20px;">
+                <!-- @sliderA模块-start -->
+                #include('../components/sliderCourse/sliderCourse.html')
+            </div>
+            <div style="width: 100%;">
+                <!-- @sliderB模块-start -->
+                #include('../components/sliderUser/sliderUser.html')
+            </div>
+        </div>
+        <div class="layout_inner_left" style="margin-right: 350px;">
+            <!-- 收藏列表模块 -->
+            #include('../components/collectionList/collectionList.html')
+        </div>
+    </div>
+</div>
+
+<div class="layout_bottom" style="background-color: #2E3340;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <!-- @底部信息模块-end -->
+        #include('../components/footer/footer.html')
+        <!-- @底部信息模块-end -->
+    </div>
+</div>
+
+<script type="text/javascript" src="/commons/scripts/vendors/jquery.min.js"></script>
+</body>
+</html>

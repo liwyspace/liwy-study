@@ -1,0 +1,18 @@
+{
+    "returnType": "Object",
+    "datas": [{
+        "name": "开源小屋",
+        "url": "www.oscafe.net",
+        "keywords": "开源小屋,Java教程,php教程,网页设计教程,iOS教程,C++教程,C语言教程,游戏开发教程",
+        "description": "开源小屋-提供Java、PHP、网页设计、平面设计、IOS、C++、游戏开发免费视频教程，教程覆盖范围广，包含真实的实战项目。",
+        "icon": "http://localhost:9000/uploads/favicon.ico",
+        "appIcon": "http://localhost:9000/uploads/apple-touch-icon.png",
+        "logoPic": "http://localhost:9000/uploads/logoko.png",
+        "email": "liwenyao_java@126.com",
+        "QQ": "332301842",
+        "WeiXin": "liwy1024611",
+        "wxPic": "",
+        "qqPic": "",
+        "copyright": "Copyright &copy; www.oscafe.net  京ICP备15000252号-1"
+    }]
+}

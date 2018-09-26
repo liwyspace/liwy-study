@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="开源小屋,Java教程,php教程,网页设计教程,iOS教程,C++教程,C语言教程,游戏开发教程"/>
+    <meta name="description" content="开源小屋-提供Java、PHP、网页设计、平面设计、IOS、C++、游戏开发免费视频教程，教程覆盖范围广，包含真实的实战项目。"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>开源小屋 | 首页</title>
+    <link rel="apple-touch-icon" href="../commons/images/apple-touch-icon.png">
+</head>
+<body>
+
+<!-- 浏览器过时提醒 -->
+#include('../components/upgradeBrowser/upgradeBrowser.html')
+
+<div class="layout_top" style="background-color: #2E3340;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <!-- 导航栏模块-->
+        #include('../components/header/header.html')
+    </div>
+</div>
+
+<div class="layout_main" style="margin: 40px 0;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <div class="layout_inner_lunpic">
+            <!-- 轮播图 -->
+            #include('../components/slide3d/slide.html')
+        </div>
+        <div class="layout_inner_study" style="margin-top: 40px;">
+            <!-- 标签页 -->
+            #include('../components/tabs/tabs.html')
+            <!-- 图标列表 -->
+            #include('../components/picList/picList.html')
+        </div>
+        <div class="layout_inner_project">
+            <!-- 标签页 -->
+            #include('../components/tabs/tabs.html')
+            <!-- 图标列表 -->
+            #include('../components/picList/picList.html')
+        </div>
+        <div class="layout_inner_fruand">
+            <!-- 标签页 -->
+            #include('../components/tabs/tabs.html')
+            <!-- 友情链接 -->
+            <div class="friend">
+                <div class="links"></div>
+                <div class="friends"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layout_bottom" style="background-color: #2E3340;">
+    <div class="layout_inner" style="width:1140px; margin:0 auto; overflow:hidden; padding: 0 30px;">
+        <!-- @底部信息模块-end -->
+        #include('../components/footer/footer.html')
+        <!-- @底部信息模块-end -->
+    </div>
+</div>
+
+<script type="text/javascript" src="/commons/scripts/vendors/jquery.min.js"></script>
+</body>
+</html>

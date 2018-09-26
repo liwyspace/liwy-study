@@ -1,0 +1,13 @@
+.picList li:hover {
+    top: -3px;
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    .star {
+        display: none;
+    }
+    .zhe {
+        display: none;
+    }
+}

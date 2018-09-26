@@ -1,0 +1,88 @@
+/* 项目列表*/
+div.layout_inner_contex {
+    @import "../../commons/styles/projectPicList";
+}
+
+/* @bannerbox-start*/
+.swiper-container, .swiper-container2 {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Fix of Webkit flickering */
+    z-index: 1;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+
+    -webkit-transition-property: -webkit-transform, left, top;
+    -webkit-transition-duration: 0s;
+    -webkit-transform: translate3d(0px, 0, 0);
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: -moz-transform, left, top;
+    -moz-transition-duration: 0s;
+    -moz-transform: translate3d(0px, 0, 0);
+    -moz-transition-timing-function: ease;
+
+    -o-transition-property: -o-transform, left, top;
+    -o-transition-duration: 0s;
+    -o-transform: translate3d(0px, 0, 0);
+    -o-transition-timing-function: ease;
+    -o-transform: translate(0px, 0px);
+
+    -ms-transition-property: -ms-transform, left, top;
+    -ms-transition-duration: 0s;
+    -ms-transform: translate3d(0px, 0, 0);
+    -ms-transition-timing-function: ease;
+
+    transition-property: transform, left, top;
+    transition-duration: 0s;
+    transform: translate3d(0px, 0, 0);
+    transition-timing-function: ease;
+}
+.swiper-wrapper a{width: 1920px; height: 380px; background-position: 50% 50%; background-repeat: no-repeat no-repeat;}
+.swiper-free-mode > .swiper-wrapper {
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    float: left;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+    -ms-touch-action: pan-y;
+}
+
+.swiper-wp8-vertical {
+    -ms-touch-action: pan-x;
+}
+
+.swiper-container { height: 242px; width: 100%; }
+.pagination { position: absolute; left: 0; text-align: center; bottom: 20px; width: 100%; z-index: 800 }
+.swiper-pagination-switch { display: inline-block; width:10px; height:10px;  background: #fff; margin: 0 5px 0 5px; cursor: pointer; border-radius:50%; }
+.swiper-active-switch { background:#8D8A88;}
+.swiper-slide { position: relative; }
+#banner-left{ position: absolute; left:3%; top:50%; margin-top: -30px; z-index: 800; display: none;}
+.arrow-left{ background:url("../images/banner-left.png") 0 0 no-repeat;width:30px;height:60px; display: block; overflow: hidden;}
+.arrow-left2{ background:url("../images/banner-left.png") 0 -60px no-repeat;width:30px;height:60px; display: block; overflow: hidden;}
+
+#banner-right{ position: absolute; right:3%; top:50%; margin-top: -30px; z-index: 800;display:none;}
+.arrow-right{ background:url("../images/banner-right.png") 0 0 no-repeat;width:30px;height:60px; display: block; overflow: hidden;}
+.arrow-right2{ background:url("../images/banner-right.png") 0 -60px no-repeat;width:30px;height:60px; display: block; overflow: hidden;}
+.swiper-slide .swiper-box{width:1000px; margin: 0 auto;height:330px; padding-top: 100px;}
+.swiper-slide .swiper-box h2{font-size: 50px; font-weight:bold; color: #fff; margin-bottom: 20px; }
+.swiper-slide .swiper-box .banner-infor{font-size: 20px; font-weight:400; color: #eee; margin-bottom: 30px; }
+.swiper-slide .swiper-box .banner-infor2{font-size: 16px; font-weight:400; color: #eee; }
+/* @bannerbox-end */

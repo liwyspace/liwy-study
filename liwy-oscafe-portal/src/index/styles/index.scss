@@ -1,0 +1,33 @@
+/* 项目列表*/
+div.layout_inner_project {
+    @import "../../commons/styles/projectPicList";
+}
+
+/* 友情链接 */
+div.friend {
+    .links {
+        overflow: hidden;
+        a {
+            float: left;
+            margin-right: 10px;
+            font-size: 14px;
+            color: #888;
+            line-height: 30px;
+
+            :hover {
+                color: #333;
+            }
+        }
+    }
+
+    .friends {
+        overflow: hidden;
+        display: none;
+        img {
+            float: left;
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}

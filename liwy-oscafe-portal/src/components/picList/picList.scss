@@ -1,0 +1,75 @@
+/* list1-start */
+.picList {
+    width: 100%;
+    overflow: hidden;
+    ul {
+        width: 102%;
+        float: left;
+        position: relative;
+
+        li {
+            float: left;
+            width: 23%;
+            margin-right: 2%;
+            position: relative;
+            margin-bottom: 30px;
+
+            img {
+                width: 100%;
+            }
+
+            .zhe {
+                width: 100%;
+                height: 186px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: #2196f3;
+                opacity: 0.3;
+                filter: alpha(opacity=30);
+                display: none;
+            }
+            .star {
+                width: 72px;
+                height: 72px;
+                display: none;
+                position: absolute;
+                left: 50%;
+                margin-left: -36px;
+                top: 56px;
+                background: url(../../commons/images/icon.png) no-repeat 0 -259px;
+            }
+
+            :hover {
+                .star {
+                    display: block;
+                }
+                .zhe {
+                    display: block;
+                }
+            }
+        }
+
+        .bdtxt {
+            width: 100%;
+            padding: 15px 0;
+            background: #fff;
+
+            h3 {
+                font-size: 16px;
+                padding: 0px 10px 13px 10px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            p {
+                font-size: 14px;
+                color: #999;
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+/* list1-end */

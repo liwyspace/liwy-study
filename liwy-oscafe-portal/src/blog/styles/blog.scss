@@ -1,0 +1,16 @@
+
+.summary_type {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    ul {
+        float: left;
+        li {
+            float: left;
+            padding: 0 10px;
+            margin: 10px 0;
+            border-right: 1px solid #CCCCCC;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+/* @scroll-start*/
+.scroll {width:100%; height:450px; margin:0 auto; position:relative;}
+.scroll .images{position:relative; top:-10px;}
+.scroll .images ul li {position: absolute; z-index:6; border-radius:5px; overflow:hidden; box-shadow: 0 4px 6px #ccc;}
+.scroll .images ul li img {width: 100%; height: 100%;}
+.scroll .images ul li.no0 {z-index: 1; width: 248px; height: 131px; top: 100px; left: 0; opacity:0; filter:alpha(opacity=0);}
+.scroll .images ul li.no1 { z-index: 2; width: 725px; height: 321px; top: 50px; left: 0px;}
+.scroll .images ul li.no2 { z-index: 3; width: 874px; height: 382px; top: 20px; left: 134px;}
+.scroll .images ul li.no3 { z-index: 2; width: 725px; height: 321px; top: 50px; left: 415px;}
+.scroll .images ul li.no4 { z-index: 1; width: 248px; height: 131px;	top: 100px;	left: 600px; opacity:0; filter:alpha(opacity=0);}
+.scroll .images ul li.no5{display:none;}
+.scroll .images ul li.no2 .zhezhao a{display:block; width:100%; height:100%;}
+.scroll .btnbox{z-index:7;}
+.scroll .btnbox a{display: block; width:33px; height:33px; position: absolute; cursor: pointer; z-index: 10; overflow:hidden;}
+.scroll .btnbox .leftbut{left:173px; bottom:72px; background:url(./images/icon.png) no-repeat -4px -32px;}
+.scroll .btnbox .leftbut:hover{ background-position:-4px -133px;}
+.scroll .btnbox .rightbut{right:173px; bottom:72px; background:url(./images/icon.png) no-repeat -4px -81px;}
+.scroll .btnbox .rightbut:hover{ background-position:-4px -190px;}
+.scroll .images ul .denghou { display: none;}
+.scroll .images .zhezhao {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #888; z-index: 9; }
+.no2 .zhezhao {opacity: 0; filter: alpha(opacity = 0);}
+.no1 .zhezhao, .no3 .zhezhao {opacity: 0.3; filter: alpha(opacity=30);}
+.dotlz {position: absolute; width:150px; bottom:28px; left:50%; margin-left:-75px; z-index: 15; overflow:hidden; }
+.dotlz ul {width:150px;}
+.dotlz ul li { float: left; width:12px; height:12px; display:block; cursor: pointer; margin: 0 9px; background:#ddd; border-radius:50%;}
+.dotlz ul li.cur {background:#bbb; }
+/* @scroll-end*/

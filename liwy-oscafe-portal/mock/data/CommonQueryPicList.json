@@ -1,0 +1,24 @@
+{
+    "returnType": "List",
+    "datas": [{
+        "title": "大图1",
+        "url": "http://www.oscafe.net/",
+        "pic": "http://localhost:9000/uploads/57a952e3c49b6.jpg"
+    },{
+        "title": "大图2",
+        "url": "http://dvd.boxuegu.com/",
+        "pic": "http://localhost:9000/uploads/57db69405d7bb.jpg"
+    },{
+        "title": "大图3",
+        "url": "http://www.icourse163.org/",
+        "pic": "http://localhost:9000/uploads/57a062d5af946.jpg"
+    },{
+        "title": "大图4",
+        "url": "http://www.ui.cn/",
+        "pic": "http://localhost:9000/uploads/57a9523318860.jpg"
+    },{
+        "title": "大图5",
+        "url": "http://www.ui.cn/",
+        "pic": "http://localhost:9000/uploads/57a9524ce3338.jpg"
+    }]
+}

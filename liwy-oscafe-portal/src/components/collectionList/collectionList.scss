@@ -1,0 +1,44 @@
+/* @collection-start */
+.collect {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .hd {
+        border-bottom: 1px solid #D2D2D2;
+        font-size: 16px;
+        color: #323846;
+        position: relative;
+        margin-bottom: 10px;
+
+        h1 {
+            height: 60px;
+            font-size: 26px;
+            line-height: 60px;
+        }
+    }
+
+    .bd {
+        overflow: hidden;
+        ul {
+            float: left;
+
+            li {
+                float: left;
+                width: 120px;
+                height: 30px;
+                line-height: 30px;
+                margin-right: 20px;
+
+                a {
+                    padding-left: 20px;
+                    cursor: pointer;
+                    //background: url(../upload/urlico.png) no-repeat;
+                }
+            }
+        }
+    }
+
+}
+
+/* @collection-end */

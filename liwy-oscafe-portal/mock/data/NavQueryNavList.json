@@ -1,0 +1,22 @@
+{
+    "returnType": "List",
+    "datas": [{
+        "name": "首页",
+        "href": "index.html"
+    },{
+        "name": "学习",
+        "href": "course.html"
+    },{
+        "name": "作品",
+        "href": "works.html"
+    },{
+        "name": "杂谈",
+        "href": "life.html"
+    },{
+        "name": "收藏",
+        "href": "collection.html"
+    },{
+        "name": "关于我们",
+        "href": "about.html"
+    }]
+}
