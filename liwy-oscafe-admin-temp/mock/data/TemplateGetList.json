@@ -1,0 +1,13 @@
+{
+    "returnType": "List",
+    "datas": [
+        {
+            "title": "列表数据1",
+            "url": "http://www.oscafe.net/"
+        },
+        {
+            "title": "列表数据2",
+            "url": "http://dvd.boxuegu.com/"
+        }
+    ]
+}
