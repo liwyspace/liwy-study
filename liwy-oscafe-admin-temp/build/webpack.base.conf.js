@@ -96,6 +96,7 @@ module.exports = {
     },
     externals: {
         'PortalSDK': 'PortalSDK.default',
-        'Vue': 'PortalSDK.default.Vue',
+        'vue': 'PortalSDK.default.Vue',
+        'HttpUtil': 'PortalSDK.default.HttpUtil'
     }
 };

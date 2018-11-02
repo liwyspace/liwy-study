@@ -1,5 +1,4 @@
-import Vue from 'Vue';
-
+import Vue from 'vue';
 import portalSDK from 'PortalSDK';
 import {routes} from './router/routes.js';
 
