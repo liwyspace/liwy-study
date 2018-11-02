@@ -38,7 +38,7 @@ module.exports = function (app) {
             mockData["datas"].forEach(item => {
                 let pp = true;
                 for(let key in query) {
-                    if(item[key] !== query[key]) {
+                    if(query[key] !== '' && query[key] !== item[key]) {
                         pp = false;
                     }
                 }
