@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 通过namespace可以与接口类映射 -->
+<mapper namespace="com.liwy.study.orm.mybatis.dao.IContentDao">
+    <insert id="insertContent" parameterType="Content" useGeneratedKeys="true" keyProperty="id">
+        insert into liwy_content
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                `id`,
+            </if>
+            <if test="channelId != null">
+                `channel_id`,
+            </if>
+            <if test="userId != null">
+                `user_id`,
+            </if>
+            <if test="tex != null">
+                `tex`,
+            </if>
+            <if test="createBy != null">
+                `create_by`,
+            </if>
+            <if test="createTime != null">
+                `create_time`,
+            </if>
+            <if test="updateBy != null">
+                `update_by`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id, jdbcType=BIGINT},
+            </if>
+            <if test="channelId != null">
+                #{channelId, jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId, jdbcType=BIGINT},
+            </if>
+            <if test="tex != null">
+                #{tex, jdbcType=LONGVARCHAR},
+            </if>
+            <if test="createBy != null">
+                #{createBy, jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy, jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="deleteContent" parameterType="long">
+        UPDATE liwy_content
+        SET is_deleted = 1
+        WHERE id = #{id, jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteContentReal" parameterType="long">
+        DELETE FROM liwy_content
+        WHERE id = #{id, jdbcType=BIGINT}
+    </delete>
+
+    <update id="updateContent">
+        update liwy_content
+        <set>
+            <if test="content.channelId != null">
+                `channel_id` = #{content.channelId, jdbcType=INTEGER},
+            </if>
+            <if test="content.userId != null">
+                `user_id` = #{content.userId, jdbcType=BIGINT},
+            </if>
+            <if test="content.tex != null">
+                `tex` = #{content.tex, jdbcType=LONGVARCHAR},
+            </if>
+            <if test="content.updateBy != null">
+                `update_by` = #{content.updateBy, jdbcType=VARCHAR},
+            </if>
+        </set>
+        <where>
+            <if test="param.id">
+                and `id` = #{param.id, jdbcType=BIGINT},
+            </if>
+            <if test="param.channelId != null">
+                and `channel_id` = #{content.channelId, jdbcType=INTEGER},
+            </if>
+            <if test="param.userId != null">
+                and `user_id` = #{content.userId, jdbcType=BIGINT},
+            </if>
+            <if test="param.createBy != null and param.createBy != ''">
+                and `update_by` = #{content.createBy, jdbcType=VARCHAR},
+            </if>
+            <if test="param.updateBy != null and param.updateBy != ''">
+                and `update_by` = #{content.updateBy, jdbcType=VARCHAR},
+            </if>
+        </where>
+    </update>
+
+    <select id="selectContent" resultType="Content" parameterType="ContentBo">
+        select
+        <include refid="contentBaseFild"/>
+        from liwy_content content
+        <include refid="contentBoWhere"/>
+    </select>
+
+    <select id="selectContentBo" resultMap="contentBoResultMap" parameterType="ContentBo">
+        SELECT
+        <include refid="contentBoFild"/>
+        FROM liwy_content content
+        LEFT JOIN liwy_channel channel ON channel.id = content.channel_id
+        LEFT JOIN liwy_user user ON user.id = content.user_id
+        <include refid="contentBoWhere"/>
+    </select>
+
+    <select id="getContent" resultType="Content" parameterType="long">
+        select
+        <include refid="contentBaseFild"/>
+        from liwy_content
+        where id = #{id, jdbcType=BIGINT}
+    </select>
+
+    <select id="getContentBo" resultMap="contentBoResultMap" parameterType="long">
+        SELECT
+        <include refid="contentBoFild"/>
+        FROM liwy_content content
+        LEFT JOIN liwy_channel channel ON channel.id = content.channel_id
+        LEFT JOIN liwy_user user ON user.id = content.user_id
+        where id = #{id, jdbcType=BIGINT}
+    </select>
+
+    <sql id="contentBaseFild">
+        `id`,
+        `channel_id`,
+        `user_id`,
+        `tex`,
+        `create_by`,
+        `create_time`,
+        `update_by`,
+        `update_time`,
+        `is_deleted`
+    </sql>
+    <sql id="contentBoWhere">
+        <where>
+            <if test="id">
+                `id` = #{id, jdbcType=BIGINT},
+            </if>
+            <if test="channelId != null">
+                `channel_id` = #{channelId, jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                `user_id` = #{userId, jdbcType=BIGINT},
+            </if>
+            <if test="createBy != null and createBy != ''">
+                `update_by` like CONCAT('%', #{createBy, jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="createTimeStart != null and createTimeStart != ''">
+                and `update_time` <![CDATA[>=]]> #{createTimeStart,jdbcType=TIMESTAMP}
+            </if>
+            <if test="createTimeEnd != null and createTimeEnd != ''">
+                and `update_time` <![CDATA[<=]]> #{createTimeEnd,jdbcType=TIMESTAMP}
+            </if>
+            <if test="param.updateBy != null">
+                `update_by` = #{content.updateBy, jdbcType=VARCHAR},
+            </if>
+        </where>
+    </sql>
+
+    <sql id="contentBoFild">
+        content.`id` as c_id,
+        content.`channel_id` as c_channel_id,
+        content.`user_id` as c_user_id,
+        content.`tex` as c_tex,
+        content.`create_by` as c_create_by,
+        content.`create_time` as c_create_time,
+        content.`update_by` as c_update_by,
+        content.`update_time` as c_update_time,
+        content.`is_deleted` as c_is_deleted,
+        channel.`id` as ch_id,
+        channel.`parent_id` as ch_parent_id,
+        channel.`priority` as ch_priority,
+        channel.`name` as ch_name,
+        channel.`is_blank` as ch_is_blank,
+        user.`id` as u_id,
+        user.`username` as u_username,
+        user.`sex` as u_sex,
+        user.`email` as u_email,
+        user.`register_time` as u_register_time,
+        user.`status` as u_status
+    </sql>
+
+    <resultMap id="contentBoResultMap" type="ContentBo">
+        <id column="c_id" property="id" jdbcType="BIGINT"/>
+        <result column="c_channel_id" property="channelId" jdbcType="INTEGER"/>
+        <result column="c_user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="c_tex" property="tex" jdbcType="LONGVARCHAR"/>
+        <result column="c_create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="c_create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="c_update_by" property="updateBy" jdbcType="VARCHAR"/>
+        <result column="c_update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="c_is_deleted" property="isDeleted" jdbcType="TINYINT"/>
+
+        <association property="channel" javaType="com.liwy.study.orm.mybatis.entity.Channel">
+            <id column="ch_id" property="id" jdbcType="INTEGER"/>
+            <result column="ch_parent_id" property="parentId" jdbcType="INTEGER"/>
+            <result column="ch_priority" property="priority" jdbcType="INTEGER"/>
+            <result column="ch_name" property="name" jdbcType="VARCHAR"/>
+            <result column="ch_is_blank" property="isBlank" jdbcType="TINYINT"/>
+        </association>
+
+        <association property="author" javaType="com.liwy.study.orm.mybatis.entity.User">
+            <id column="u_id" property="id" jdbcType="BIGINT"/>
+            <result column="u_username" property="username" jdbcType="VARCHAR"/>
+            <result column="u_sex" property="sex" jdbcType="TINYINT"/>
+            <result column="u_email" property="email" jdbcType="VARCHAR"/>
+            <result column="u_register_time" property="registerTime" jdbcType="TIMESTAMP"/>
+            <result column="u_status" property="status" jdbcType="TINYINT"/>
+        </association>
+
+    </resultMap>
+
+</mapper>

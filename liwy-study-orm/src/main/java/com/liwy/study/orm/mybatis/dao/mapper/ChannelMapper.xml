@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 通过namespace可以与接口类映射 -->
+<mapper namespace="com.liwy.study.orm.mybatis.dao.IChannelDao">
+
+    <select id="getChannelBo" parameterType="integer" resultMap="channelBoResult">
+        SELECT
+        <include refid="channelFild"><property name="tb" value="t1"/></include>,
+        <include refid="channelFild"><property name="tb" value="t2"/></include>
+        FROM liwy_channel t1
+        LEFT JOIN liwy_channel t2 ON t1.parent_id = t2.id
+        where t1.id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <!--这个元素可以被用来定义可重用的 SQL 代码段，可以包含在其他语句中。它可以被静态地(在加载参数) 参数化. 不同的属性值通过包含的实例变化.-->
+    <sql id="channelFild">
+        ${tb}.`id` as ${tb}_id,
+        ${tb}.`parent_id` as ${tb}_parent_id,
+        ${tb}.`priority` as ${tb}_priority,
+        ${tb}.`name` as ${tb}_name,
+        ${tb}.`is_blank` as ${tb}_is_blank
+    </sql>
+    <resultMap id="channelBoResult" type="com.liwy.study.orm.mybatis.bo.ChannelBo">
+        <id column="t1_id" property="id" jdbcType="INTEGER"/>
+        <result column="t1_parent_id" property="parentId" jdbcType="INTEGER" />
+        <result column="t1_priority" property="priority" jdbcType="INTEGER" />
+        <result column="t1_name" property="name" jdbcType="VARCHAR" />
+        <result column="t1_is_blank" property="isBlank" jdbcType="TINYINT" />
+        <association property="parent" javaType="com.liwy.study.orm.mybatis.entity.Channel">
+            <id column="t2_id" property="id" jdbcType="INTEGER"/>
+            <result column="t2_parent_id" property="parentId" jdbcType="INTEGER" />
+            <result column="t2_priority" property="priority" jdbcType="INTEGER" />
+            <result column="t2_name" property="name" jdbcType="VARCHAR" />
+            <result column="t2_is_blank" property="isBlank" jdbcType="TINYINT" />
+        </association>
+    </resultMap>
+
+</mapper>

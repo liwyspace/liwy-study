@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--如果属性在不只一个地方进行了配置，那么 MyBatis 将按照下面的顺序来加载：-->
+    <!--    在 properties 元素体内指定的属性首先被读取。-->
+    <!--    然后根据 properties 元素中的 resource 属性读取类路径下属性文件或根据 url 属性指定的路径读取属性文件，并覆盖已读取的同名属性。-->
+    <!--    最后读取作为方法参数传递的属性，并覆盖已读取的同名属性。-->
+    <!--因此，通过方法参数传递的属性具有最高优先级，resource/url 属性中指定的配置文件次之，最低优先级的是 properties 属性中指定的属性。-->
+    <properties resource="config-jdbc.properties">
+        <!--<property name="db_username" value="root"/>-->
+        <!--<property name="password" value="F2Fa3!33TYyg"/>-->
+        <!--开启为占位符指定一个默认值-->
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
+    </properties>
+
+    <!--这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。-->
+    <settings>
+        <!--全局地开启或关闭配置文件中的所有映射器已经配置的任何二级缓存。默认：true-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--MyBatis 利用本地缓存机制（Local Cache）防止循环引用（circular references）和加速重复嵌套查询。 -->
+        <!--默认值为 SESSION，这种情况下会缓存一个会话中执行的所有查询。 -->
+        <!--若设置值为 STATEMENT，本地会话仅用在语句执行上，对相同 SqlSession 的不同调用将不会共享数据。-->
+        <setting name="localCacheScope" value="SESSION"/>
+        <!--延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置fetchType属性来覆盖该项的开关状态。默认：false-->
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <!--当开启时，任何方法的调用都会加载该对象的所有属性。否则，每个属性会按需加载（参考lazyLoadTriggerMethods).默认(>3.4.1)：false -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--指定哪个对象的方法触发一次延迟加载。用逗号分隔的方法列表。默认：equals,clone,hashCode,toString-->
+        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+        <!--是否允许单一语句返回多结果集（需要兼容驱动）。默认：true-->
+        <setting name="multipleResultSetsEnabled" value="true"/>
+        <!--使用列标签代替列名。不同的驱动在这方面会有不同的表现， 具体可参考相关驱动文档或通过测试这两种不同的模式来观察所用驱动的结果。默认：true-->
+        <setting name="useColumnLabel" value="true"/>
+        <!--允许 JDBC 支持自动生成主键，需要驱动兼容。 如果设置为 true 则这个设置强制使用自动生成主键，尽管一些驱动不能兼容但仍可正常工作（比如 Derby）。默认：false-->
+        <setting name="useGeneratedKeys" value="false"/>
+        <!--指定 MyBatis 应如何自动映射列到字段或属性。默认：PARTIAL-->
+        <!--NONE 表示取消自动映射；-->
+        <!--PARTIAL 只会自动映射没有定义嵌套结果集映射的结果集。 -->
+        <!--FULL 会自动映射任意复杂的结果集（无论是否嵌套）。-->
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <!--指定发现自动映射目标未知列（或者未知属性类型）的行为。默认：NONE-->
+        <!--NONE: 不做任何反应-->
+        <!--WARNING: 输出提醒日志 ('org.apache.ibatis.session.AutoMappingUnknownColumnBehavior' 的日志等级必须设置为 WARN)-->
+        <!--FAILING: 映射失败 (抛出 SqlSessionException)-->
+        <setting name="autoMappingUnknownColumnBehavior" value="NONE"/>
+        <!--配置默认的执行器。默认：SIMPLE-->
+        <!--SIMPLE 就是普通的执行器；-->
+        <!--REUSE 执行器会重用预处理语句（prepared statements）； -->
+        <!--BATCH 执行器将重用语句并执行批量更新。-->
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <!--设置超时时间，它决定驱动等待数据库响应的秒数。-->
+        <!--<setting name="defaultStatementTimeout" value="25"/>-->
+        <!--是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。默认：false-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--当没有为参数提供特定的 JDBC 类型时，为空值指定 JDBC 类型。 某些驱动需要指定列的 JDBC 类型，多数情况直接用一般类型即可，比如 NULL、VARCHAR 或 OTHER。默认：OTHER-->
+        <setting name="jdbcTypeForNull" value="OTHER"/>
+        <!--当返回行的所有列都是空时，MyBatis默认返回null。 当开启这个设置时，MyBatis会返回一个空实例。 （从3.4.2开始）-->
+        <!--请注意，它也适用于嵌套的结果集 (i.e. collectioin and association)。默认：false-->
+        <setting name="returnInstanceForEmptyRow" value="false"/>
+        <!--指定 MyBatis 增加到日志名称的前缀。-->
+        <setting name="logPrefix" value="com.liwy.study.mybatis."/>
+        <!--指定 MyBatis 所用日志的具体实现，未指定时将自动查找。SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING-->
+        <setting name="logImpl" value="SLF4J"/>
+        <!--为驱动的结果集获取数量（fetchSize）设置一个提示值。此参数只可以在查询设置中被覆盖。-->
+        <!--<setting name="defaultFetchSize" value="100"/>-->
+        <!--允许在嵌套语句中使用分页（RowBounds）。如果允许使用则设置为false。默认：false-->
+        <!--<setting name="safeRowBoundsEnabled" value="false"/>-->
+        <!--启用安全的结果集处理器（ResultHandler）。如果允许使用则设置为false。默认：true-->
+        <!--<setting name="safeResultHandlerEnabled" value="true"/>-->
+        <!-- 其他配置项请参考：http://www.mybatis.org/mybatis-3/zh/configuration.html#settings -->
+    </settings>
+
+    <!--类型别名是为 Java 类型设置一个短的名字。它只和 XML 配置有关，存在的意义仅在于用来减少类完全限定名的冗余。-->
+    <typeAliases>
+        <typeAlias alias="Content" type="com.liwy.study.orm.mybatis.entity.Content"/>
+        <typeAlias alias="ContentBo" type="com.liwy.study.orm.mybatis.bo.ContentBo"/>
+        <!--也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean-->
+        <!--每一个在包 domain.blog 中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。 -->
+        <!--若有注解，则别名为其注解值。如@Alias("author")-->
+        <!--<package name="com.liwy.study.mybatis.entity"/>-->
+    </typeAliases>
+
+    <!--注册自定义类型处理器-->
+    <!--插入语句和ResultMap中由于不知道jdbc类型所有需要指定jdbcType类型方能正确匹配，也可以指定typeHandler-->
+    <typeHandlers>
+        <typeHandler handler="com.liwy.study.orm.mybatis.typeHandler.SexEnumTypeHandler"/>
+    </typeHandlers>
+
+    <!--MyBatis 每次创建结果对象的新实例时，它都会使用一个对象工厂（ObjectFactory）实例来完成。 -->
+    <!--默认的对象工厂需要做的仅仅是实例化目标类，要么通过默认构造方法，要么在参数映射存在的时候通过参数构造方法来实例化。 -->
+    <!--如果想覆盖对象工厂的默认行为，则可以通过创建自己的对象工厂来实现。-->
+    <objectFactory type="com.liwy.study.orm.mybatis.objectFactory.MyObjectFactory"></objectFactory>
+
+    <!--MyBatis 允许你在已映射语句执行过程中的某一点进行拦截调用。默认情况下，MyBatis 允许使用插件来拦截的方法调用包括：-->
+    <!--Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)-->
+    <!--ParameterHandler (getParameterObject, setParameters)-->
+    <!--ResultSetHandler (handleResultSets, handleOutputParameters)-->
+    <!--StatementHandler (prepare, parameterize, batch, update, query)-->
+    <plugins>
+        <plugin interceptor="com.liwy.study.orm.mybatis.plugins.MyPlugin">
+            <property name="someProperty" value="100"/>
+        </plugin>
+        <!--<plugin interceptor="PagePlugin">-->
+            <!--<property name="page" value="0"/>-->
+            <!--<property name="pageSize" value="20"/>-->
+        <!--</plugin>-->
+    </plugins>
+
+    <!--MyBatis 可以配置成适应多种环境，这种机制有助于将 SQL 映射应用于多种数据库之中， 现实情况下有多种理由需要这么做。-->
+    <!--例如，开发、测试和生产环境需要有不同的配置；或者共享相同 Schema 的多个生产数据库， 想使用相同的 SQL 映射。-->
+    <!--如果你想连接两个数据库，就需要创建两个 SqlSessionFactory 实例，每个数据库对应一个-->
+    <environments default="development">
+        <!--开发环境-->
+        <environment id="development">
+            <!-- 事务 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${dev_db_driver}"/>
+                <property name="url" value="${dev_db_url}"/>
+                <property name="username" value="${dev_db_username:root}"/>
+                <property name="password" value="${dev_db_password}"/>
+            </dataSource>
+        </environment>
+
+        <!--生产环境-->
+        <environment id="production">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${db_driver}"/>
+                <property name="url" value="${db_url}"/>
+                <property name="username" value="${db_username:root}"/>
+                <property name="password" value="${db_password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--MyBatis 可以根据不同的数据库厂商执行不同的语句，这种多厂商的支持是基于映射语句中的 databaseId 属性。 -->
+    <!--MyBatis 会加载不带 databaseId 属性和带有匹配当前数据库 databaseId 属性的所有语句。 -->
+    <!--如果同时找到带有 databaseId 和不带 databaseId 的相同语句，则后者会被舍弃。-->
+    <databaseIdProvider type="DB_VENDOR" >
+        <property name="SQL Server" value="sqlserver"/>
+        <property name="DB2" value="db2"/>
+        <property name="Oracle" value="oracle" />
+        <property name="MySQL" value="mysql"/>
+    </databaseIdProvider>
+
+    <!--映射器-->
+    <mappers>
+        <!-- 使用相对于类路径的资源引用 -->
+        <mapper resource="com/liwy/study/orm/mybatis/dao/mapper/ContentMapper.xml"/>
+        <mapper resource="com/liwy/study/orm/mybatis/dao/mapper/UserMapper.xml"/>
+        <mapper resource="com/liwy/study/orm/mybatis/dao/mapper/ChannelMapper.xml"/>
+        <!-- 使用完全限定资源定位符（URL） -->
+        <!--<mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
+        <!-- 使用映射器接口实现类的完全限定类名 -->
+        <!--<mapper class="org.mybatis.builder.AuthorMapper"/>-->
+        <!-- 将包内的映射器接口实现全部注册为映射器 -->
+        <!--<package name="org.mybatis.builder"/>-->
+    </mappers>
+</configuration>

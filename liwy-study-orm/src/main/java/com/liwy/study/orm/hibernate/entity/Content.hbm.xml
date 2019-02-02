@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.liwy.study.orm.hibernate.entity">
+
+    <class name="com.liwy.study.orm.hibernate.entity.Content" table="liwy_content">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+        <property name="userId" column="user_id" type="long"/>
+        <property name="tex" column="tex" type="string"/>
+        <property name="createBy" column="create_by" type="string"/>
+        <property name="createTime" column="create_time" type="date"/>
+        <property name="updateBy" column="update_by" type="string"/>
+        <property name="updateTime" column="update_time" type="date"/>
+        <property name="isDeleted" column="is_deleted" type="byte"/>
+        <many-to-one name="channel" column="channel_id" />
+    </class>
+
+</hibernate-mapping>

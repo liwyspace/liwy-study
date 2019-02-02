@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- c3p0数据库连接池配置 -->
+        <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.timeout">120</property>
+        <property name="automaticTestTable">Test</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.idle_test_period">120</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="c3p0.testConnectionOnCheckout">true</property>
+        <property name="c3p0.idleConnectionTestPeriod">18000</property>
+        <property name="c3p0.maxIdleTime">25000</property>
+        <property name="c3p0.idle_test_period">120</property>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1/liwy_study_mybatis?allowMultiQueries=true</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">l332301842</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- 实体类映射文件 -->
+        <!--<mapping resource="com/liwy/study/hibernate/entity/Channel.hbm.xml" />-->
+        <mapping resource="com/liwy/study/orm/hibernate/entity/Content.hbm.xml" />
+        <!-- 使用注解代替映射文件-->
+        <mapping class="com.liwy.study.orm.hibernate.entity.Channel" />
+
+    </session-factory>
+
+</hibernate-configuration>
