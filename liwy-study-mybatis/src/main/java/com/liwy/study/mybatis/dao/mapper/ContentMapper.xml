@@ -470,6 +470,25 @@
                                 #{contentBo.contentNum, jdbcType=BIGINT, mode=OUT},
                                 #{contentBo.tagNum, jdbcType=BIGINT, mode=OUT})
     </select>
+    <resultMap id="channel" type="com.liwy.study.mybatis.entity.Channel">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+        <result column="priority" property="priority" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="is_blank" property="isBlank" jdbcType="TINYINT" />
+    </resultMap>
+    <resultMap id="tag" type="com.liwy.study.mybatis.entity.Tag">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="TINYINT" />
+    </resultMap>
+    <select id="queryChannelTag" statementType="CALLABLE" resultMap="channel,tag">
+        CALL procQueryChannelTag()
+    </select>
+    <select id="queryChannelTag2" statementType="CALLABLE" resultMap="channel,tag">
+        SELECT * FROM liwy_channel;
+        SELECT * FROM liwy_tag;
+    </select>
 
 
     <!--======================================================================-->

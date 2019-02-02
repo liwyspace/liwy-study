@@ -8,7 +8,6 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +42,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testProperties() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
 
@@ -65,7 +64,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testPropertiesInJava() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
         // 自定义Properties
         Properties properties = new Properties();
         properties.setProperty("dev_db_password", "l332301842");
@@ -90,7 +89,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testTypeHandler() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 获取Session
         SqlSession session = sqlSessionFactory.openSession();
@@ -131,7 +130,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testObjectFactory() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 获取Session
         SqlSession session = sqlSessionFactory.openSession();
@@ -157,7 +156,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testPlugin() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 获取Session
         SqlSession session = sqlSessionFactory.openSession();
@@ -182,7 +181,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testEnvironment() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, "production");
         // 获取Session
         SqlSession session = sqlSessionFactory.openSession();
@@ -212,7 +211,7 @@ public class ConfigOtherTest {
      */
     @Test
     public void testDatabaseIdProvider() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         // 获取Session
         SqlSession session = sqlSessionFactory.openSession();

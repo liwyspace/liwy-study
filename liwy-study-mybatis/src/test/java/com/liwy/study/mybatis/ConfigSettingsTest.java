@@ -2,8 +2,9 @@ package com.liwy.study.mybatis;
 
 import com.liwy.study.mybatis.bo.ContentBo;
 import com.liwy.study.mybatis.dao.IContentDao;
+import com.liwy.study.mybatis.entity.Channel;
 import com.liwy.study.mybatis.entity.Content;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLTimeoutException;
+import com.liwy.study.mybatis.entity.Tag;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.AutoMappingBehavior;
 import org.apache.ibatis.session.AutoMappingUnknownColumnBehavior;
@@ -15,7 +16,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.type.JdbcType;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +54,7 @@ public class ConfigSettingsTest {
     @Test
     public void testCatch() throws IOException, InterruptedException {
         Thread.sleep(1000);
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息
@@ -118,7 +118,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testLazyLoading() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 获取Session
@@ -159,7 +159,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testMultipleResultSets() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 获取Session
@@ -173,6 +173,18 @@ public class ConfigSettingsTest {
             logger.info(contentBo.getContentNum().toString());
             logger.info(contentBo.getTagNum().toString());
             logger.info(contentBo.toString());
+
+            List<List<?>> lists = contentDao.queryChannelTag();
+            //对应第一个表
+            System.out.println((List<Channel>)lists.get(0));
+            //对应第二个表
+            System.out.println((List<Tag>)lists.get(1));
+
+            List<List<?>> lists2 = contentDao.queryChannelTag2();
+            //对应第一个表
+            System.out.println((List<Channel>)lists2.get(0));
+            //对应第二个表
+            System.out.println((List<Tag>)lists2.get(1));
         } finally {
             // 关闭Session
             session.close();
@@ -192,7 +204,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testColumnLabel() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 获取Session
@@ -222,7 +234,7 @@ public class ConfigSettingsTest {
     @Test
     public void testGeneratedKeys() throws IOException, InterruptedException {
         Thread.sleep(1000);
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 获取Session
@@ -260,7 +272,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testAutoMapping() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息
@@ -297,7 +309,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testExecutorType() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息
@@ -339,7 +351,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testTimeout() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息
@@ -378,7 +390,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testMapUnderscoreToCamelCase() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息
@@ -412,7 +424,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testJdbcTypeForNull() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息
@@ -452,7 +464,7 @@ public class ConfigSettingsTest {
      */
     @Test
     public void testReturnInstanceForEmptyRow() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 覆盖配置信息

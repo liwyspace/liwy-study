@@ -1,6 +1,5 @@
 package com.liwy.study.mybatis.generator;
 
-import jdk.internal.util.xml.impl.Input;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
@@ -8,7 +7,6 @@ import org.mybatis.generator.exception.InvalidConfigurationException;
 import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -24,7 +22,7 @@ public class MyBatisGeneratorUtils {
     public static void generator() {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
-        InputStream configFile = MyBatisGeneratorUtils.class.getResourceAsStream("/generatorConfig.xml");
+        InputStream configFile = MyBatisGeneratorUtils.class.getResourceAsStream("/mybatis/generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = null;
         try {

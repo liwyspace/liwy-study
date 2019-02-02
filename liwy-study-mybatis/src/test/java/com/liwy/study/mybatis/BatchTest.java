@@ -1,9 +1,6 @@
 package com.liwy.study.mybatis;
 
-import com.liwy.study.mybatis.bo.ChannelBo;
-import com.liwy.study.mybatis.dao.IChannelDao;
 import com.liwy.study.mybatis.dao.IContentDao;
-import com.liwy.study.mybatis.entity.Channel;
 import com.liwy.study.mybatis.entity.Content;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.ExecutorType;
@@ -11,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -38,7 +34,7 @@ public class BatchTest {
 
     @BeforeClass
     public static void init() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         contentList = new ArrayList<>(5000);

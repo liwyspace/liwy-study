@@ -38,7 +38,7 @@ public class PageTest {
 
     @BeforeClass
     public static void init() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
@@ -98,7 +98,7 @@ public class PageTest {
      */
     @Test
     public void testPagePlugin() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory1 = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 配置分页插件

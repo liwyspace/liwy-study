@@ -12,7 +12,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.beans.PropertyVetoException;
@@ -109,7 +108,7 @@ public class SqlSessionTest {
      */
     @Test
     public void testBuildByXML() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml"); // 从ClassPath中获取配置文件流
+        InputStream inputStream = Resources.getResourceAsStream("mybatis/mybatis-config.xml"); // 从ClassPath中获取配置文件流
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         // 获取Session

@@ -128,6 +128,26 @@ public interface IContentDao {
     void getEntityCount(@Param("channelId") Integer channelId, @Param("contentBo") ContentBo contentBo);
 
     /**
+     * <b>描述：</b> 同时查询栏目与标签列表<br/>
+     * <b>作者：</b>wenyao02.li<br/>
+     * <b>版本：</b>V1.0 <br/>
+     *
+     * @param
+     * @return java.util.List<java.util.List<?>>
+     */
+    List<List<?>> queryChannelTag();
+
+    /**
+     * <b>描述：</b> 同时查询栏目与标签列表2<br/>
+     * <b>作者：</b>wenyao02.li<br/>
+     * <b>版本：</b>V1.0 <br/>
+     *
+     * @param
+     * @return java.util.List<java.util.List<?>>
+     */
+    List<List<?>> queryChannelTag2();
+
+    /**
      * <b>描述：</b> 批量插入内容<br/>
      * <b>作者：</b>wenyao02.li<br/>
      * <b>版本：</b>V1.0 <br/>
