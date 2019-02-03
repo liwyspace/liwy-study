@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 设置别名 -->
+    <alias name="userService" alias="userServiceAlias"/>
+    <bean id="userService" class="com.liwy.study.spring.spring4.service.impl.UserServiceImpl"/>
+
+
+    <!-- 通过构造方法实例化bean -->
+    <bean id="instansBean" class="com.liwy.study.spring.spring4.bean.InstansBean" >
+        <constructor-arg value="liwy"/>
+    </bean>
+    <!-- 通过静态工厂方法实例化bean -->
+    <bean id="instansBean2" class="com.liwy.study.spring.spring4.bean.InstansBean" factory-method="createInstansBean">
+        <constructor-arg type="java.lang.String" value="liwy1"/>
+    </bean>
+    <!-- 通过实例化工厂实例化bean -->
+    <bean id="instansBeanFactory" class="com.liwy.study.spring.spring4.bean.InstansBeanFactory"/>
+    <bean id="instansBean3" factory-bean="instansBeanFactory" factory-method="createInstansBean">
+        <constructor-arg value="liwy2"/>
+    </bean>
+
+</beans>

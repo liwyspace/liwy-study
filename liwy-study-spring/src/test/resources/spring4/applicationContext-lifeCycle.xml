@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+default-init-method="initDef" default-destroy-method="destroyDef">
+    <!--使用beans标签上设置的默认回调函数-->
+    <bean id="lifeCycleBean" class="com.liwy.study.spring.spring4.bean.LifeCycleBean"/>
+
+    <!--指定bean的回调函数-->
+    <bean id="lifeCycleBean2" class="com.liwy.study.spring.spring4.bean.LifeCycleBean" init-method="myinit" destroy-method="mydestroy"/>
+
+    <!--通过实现接口的方式设置回调函数-->
+    <bean id="lifeCycleBeanInt" class="com.liwy.study.spring.spring4.bean.LifeCycleBeanInt"/>
+
+</beans>
