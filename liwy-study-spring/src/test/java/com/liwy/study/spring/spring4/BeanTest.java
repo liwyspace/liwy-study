@@ -3,9 +3,16 @@ package com.liwy.study.spring.spring4;
 import com.liwy.study.spring.spring4.bean.InstansBean;
 import com.liwy.study.spring.spring4.service.IUserService;
 import com.liwy.study.spring.spring4.service.impl.UserServiceImpl;
+import org.hibernate.annotations.SourceType;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * <b>名称：</b> Bean测试<br/>

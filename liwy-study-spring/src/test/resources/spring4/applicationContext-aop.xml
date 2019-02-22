@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 声明一个业务类 -->
+    <bean id="aopServiceOne" class="com.liwy.study.spring.spring4.aop.AopServiceOneImpl" />
+
+    <!-- 指定切点匹配类 -->
+    <bean id="myPointcut" class="com.liwy.study.spring.spring4.aop.AopPointcut" />
+
+    <!-- 声明通知类 -->
+    <bean id="myBeforeAdvice" class="com.liwy.study.spring.spring4.aop.AopBeforeAdvice" />
+    <bean id="myAfterReturningAdvice" class="com.liwy.study.spring.spring4.aop.AopAfterReturningAdvice" />
+
+    <!-- 包装通知，指定切点 -->
+    <bean id="matchBeforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="pointcut">
+            <ref bean="myPointcut" />
+        </property>
+        <property name="advice">
+            <ref bean="myBeforeAdvice" />
+        </property>
+    </bean>
+
+    <!-- 使用ProxyFactoryBean 产生代理对象 -->
+    <bean id="myAopServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!-- 代理对象所实现的接口 ，如果有接口可以这样设置 -->
+        <property name="proxyInterfaces" value="com.liwy.study.spring.spring4.aop.AopService" />
+
+        <!-- 设置目标对象 -->
+        <property name="target" ref="aopServiceOne" />
+
+        <!-- 代理对象所使用的拦截器 -->
+        <property name="interceptorNames">
+            <list>
+                <value>matchBeforeAdvisor</value>
+                <value>myBeforeAdvice</value>
+                <value>myAfterReturningAdvice</value>
+            </list>
+        </property>
+    </bean>
+</beans>

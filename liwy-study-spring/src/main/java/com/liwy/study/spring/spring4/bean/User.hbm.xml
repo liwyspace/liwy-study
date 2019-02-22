@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.liwy.study.spring.spring4.bean">
+
+    <class name="com.liwy.study.spring.spring4.bean.User" table="liwy_user">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+        <property name="username" column="username" type="long" />
+        <property name="sex" column="sex" type="byte"/>
+        <property name="email" column="email" type="string"/>
+        <property name="registerTime" column="register_time" type="timestamp"/>
+        <property name="status" column="status" type="byte"/>
+        <property name="content" column="content" type="string"/>
+        <property name="icon" column="icon" type="byte[]" />
+    </class>
+
+</hibernate-mapping>

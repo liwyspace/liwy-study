@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>velocity Test</title>
+</head>
+<body>
+<h1>Hello,$user</h1>
+<div>
+    $latestProduct.url
+    $latestProduct.name
+
+    #if($isTrue)
+        $latestProduct.url
+    #else
+        $latestProduct.name
+    #end
+
+    $createTime
+    #foreach($item in $list)
+        $item
+    #end
+</div>
+</body>
+</html>

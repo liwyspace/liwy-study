@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.liwy.study.spring.spring4">
+        <context:exclude-filter type="aspectj" expression="com.liwy.study.spring.spring4.dao.*"/>
+        <context:exclude-filter type="aspectj" expression="com.liwy.study.spring.spring4.dao.impl.UserDaoJdbcImpl"/>
+        <context:exclude-filter type="aspectj" expression="com.liwy.study.spring.spring4.dao.impl.UserDaoHibernateImpl"/>
+    </context:component-scan>
+
+    <!-- 配置数据源 -->
+    <context:property-placeholder location="classpath:config-jdbc.properties" />
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <!-- 基本属性 url、user、password -->
+        <property name="url" value="${dev_db_url}" />
+        <property name="username" value="${dev_db_username}" />
+        <property name="password" value="${dev_db_password}" />
+    </bean>
+
+    <!-- jdbcTemplate
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="dataSource" />
+    </bean>
+    -->
+
+    <!-- 配置事务管理器
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+     -->
+
+    <!-- 配置 EntityManagerFactory -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 配置 JPA 提供商的适配器. 可以通过内部 bean 的方式来配置 -->
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
+        </property>
+        <!-- 配置实体类所在的包 -->
+        <property name="packagesToScan" value="com.liwy.study.spring.spring4.bean"></property>
+        <!-- 配置 JPA 的基本属性. 例如 JPA 实现产品的属性 -->
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- JPA 事务管理器 -->
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"></property>
+    </bean>
+
+    <!--可以通过Annotation方式代替下面的声明式事务配置-->
+    <!--<tx:annotation-driven transaction-manager="txManager"/>-->
+
+    <!-- 配置切入点 -->
+    <aop:config>
+        <aop:pointcut id="serviceOperation" expression="execution(* com.liwy.study.spring.spring4.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
+    </aop:config>
+
+    <!-- 配置通知 -->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <!-- 所有用'get'开头的方法都是只读的 -->
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="select*" read-only="true" />
+            <tx:method name="query*" read-only="true" />
+            <!--如果你需要在某一些异常抛出的时候不进行回滚, 你一样可以配置不回滚规则.-->
+            <!--<tx:method name="updateStock" no-rollback-for="InstrumentNotFoundException"/>-->
+            <!-- 其他的方法使用默认的事务配置(看下面) -->
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+</beans>

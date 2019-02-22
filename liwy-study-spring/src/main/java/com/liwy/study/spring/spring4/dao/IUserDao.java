@@ -1,5 +1,11 @@
 package com.liwy.study.spring.spring4.dao;
 
+import com.liwy.study.spring.spring4.bean.User;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
 /**
  * <b>模块：</b> <br/>
  * <b>名称：</b> <br/>
@@ -8,6 +14,23 @@ package com.liwy.study.spring.spring4.dao;
  * <b>创建时间：</b> 2019/2/2 17:41 <br/>
  * <b>版本：</b> V1.0 <br/>
  */
+@Repository
 public interface IUserDao {
-    String getUserName();
+    Long getUserCount();
+    List<User> queryUserList();
+    User getUser(Long id);
+    String getUserName(Long id);
+    void updateUser(User user);
+    void delete(Long id);
+    int insertUser(@Param("user") User user);
+    void insertUserGetId(User user);
+    void batchUserList(List<User> users);
+    void batchInsert(List<User> users);
+    void getEntityCount(Integer chId);
+
+    void simpleInsertUser(User user);
+    void simpleGetEntityCount(Integer chId);
+    void simpleQueryChannelTag();
+
+    List<User> selectUser(User param);
 }

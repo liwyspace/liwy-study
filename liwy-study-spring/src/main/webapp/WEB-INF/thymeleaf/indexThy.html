@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>thymeleaf Test</title>
+</head>
+<body>
+<h1>Hello,<span th:text="${user}"></span></h1>
+<div>
+    <p th:text="${latestProduct.url}"></p>
+    <p th:text="${latestProduct.name}"></p>
+    <div th:if="${isTrue}">
+        <p th:text="${latestProduct.url}"></p>
+    </div>
+    <div th:unless="${isTrue}">
+        <p th:text="${latestProduct.name}"></p>
+    </div>
+
+    <p th:text="${#dates.format(createTime,'yyyy-MM-dd HH:mm:ss')}"></p>
+    <ul>
+        <li th:each="item:${list}" th:text="${item}"></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,5 +1,8 @@
 package com.liwy.study.spring.spring4.service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  * <b>模块：</b> <br/>
  * <b>名称：</b> <br/>
@@ -10,4 +13,6 @@ package com.liwy.study.spring.spring4.service;
  */
 public interface IUserService {
     String sayHello();
+
+    void insertTowUser() throws Exception;
 }

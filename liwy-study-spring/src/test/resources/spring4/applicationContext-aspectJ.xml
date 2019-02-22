@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.liwy.study.spring.spring4.aop"/>
+
+    <!--启用aspectj, 在基于java的配置中可以通过@EnableAspectJAutoProxy启用aspectj-->
+    <aop:aspectj-autoproxy />
+    <!--引入aspectj切面类-->
+    <bean class="com.liwy.study.spring.spring4.aop.MyAspectJ"/>
+
+    <!-- 基于Schema的aspectj AOP-->
+    <bean id="myXmlAspect" class="com.liwy.study.spring.spring4.aop.MyXmlAspect"/>
+    <aop:config>
+        <aop:aspect ref="myXmlAspect">
+
+            <aop:pointcut id="sayHello" expression="execution(* com.liwy.study.spring.spring4.aop.AopService.sayHello(..))"/>
+
+            <aop:pointcut id="theExecutionOfSomeFooServiceMethod"
+                          expression="execution(* com.liwy.study.spring.spring4.aop.AopService.sayHello(String)) and args(name)"/>
+
+            <aop:before method="before" pointcut-ref="sayHello"/>
+            <aop:after-returning method="afterReturning" pointcut="execution(* com.liwy.study.spring.spring4.aop.AopService.printHello(..))" returning="returnVal"/>
+            <aop:around method="around" pointcut-ref="theExecutionOfSomeFooServiceMethod"/>
+            <aop:after-throwing method="afterThrowable" pointcut="execution(* com.liwy.study.spring.spring4.aop.AopService.sayHelloThrow(..))" throwing="e"/>
+            <aop:after method="after" pointcut-ref="sayHello"/>
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>
