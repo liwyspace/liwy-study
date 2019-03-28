@@ -15,6 +15,7 @@ import java.util.List;
  * <b>版本：</b> V1.0 <br/>
  */
 @Repository("iUserDao")
+@Mapper
 public interface IUserDao {
     Long getUserCount();
 

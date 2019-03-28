@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/rabbit
+        http://www.springframework.org/schema/rabbit/spring-rabbit-2.1.xsd">
+
+    <context:component-scan base-package="com.liwy.study.mq.rabbitmq"/>
+
+    <!--定义连接工厂-->
+    <rabbit:connection-factory id="connectionFactory"
+                               host="10.105.131.42"
+                               port="5672"
+                               username="liwy"
+                               password="123456"
+                               virtual-host="/liwy"/>
+
+    <!--定义管理者-->
+    <rabbit:admin connection-factory="connectionFactory"/>
+
+    <!--定义rabbitmq template-->
+    <rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" exchange="fanoutExchange"/>
+
+    <!--定义队列-->
+    <rabbit:queue name="myQueue" auto-declare="true"/>
+
+    <!--定义fanout交换机-->
+    <rabbit:fanout-exchange name="fanoutExchange" auto-declare="true">
+        <rabbit:bindings>
+            <rabbit:binding queue="myQueue"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+
+    <!--定义direct交换机
+    <rabbit:direct-exchange name="directExchange" durable="true" auto-declare="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="myQueue" key="key1"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>-->
+    <!--定义direct交换机
+    <rabbit:topic-exchange name="topicExchange" durable="true" auto-declare="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="myQueue" pattern="key.#"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+    -->
+
+    <!--定义消息监听器-->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener ref="consumer" method="receiveMsg" queue-names="myQueue"/>
+    </rabbit:listener-container>
+
+    <!--定义消费者-->
+    <bean id="consumer" class="com.liwy.study.mq.rabbitmq.spring.Consumer"/>
+</beans>
